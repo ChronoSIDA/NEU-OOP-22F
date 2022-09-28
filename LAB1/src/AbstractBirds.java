@@ -13,9 +13,10 @@ public abstract class AbstractBirds implements Birds{
 
     private ArrayList<FEED> preferredFood;
 
+    private boolean waterBird;
     private ArrayList<WATERBODY> waterBody;
 
-    public AbstractBirds(String birdName, BIRDTYPE birdType, ArrayList<String> characteristics, boolean extinct, int numWings, ArrayList<FEED> preferredFood, ArrayList<WATERBODY> waterBody){
+    public AbstractBirds(String birdName, BIRDTYPE birdType, ArrayList<String> characteristics, boolean extinct, int numWings, ArrayList<FEED> preferredFood, boolean waterBird, ArrayList<WATERBODY> waterBody){
         if (preferredFood.size() < 2 || preferredFood.size() > 4){
             throw new IllegalArgumentException("Birds' preferred food should in range of 2 to 4 items");
         }
@@ -33,10 +34,10 @@ public abstract class AbstractBirds implements Birds{
         this.numWings = numWings;
         this.preferredFood = preferredFood;
 
-        if (waterBody == null){
-            this.waterBody = null;
-        } else {
+        if (waterBird == true){
             this.waterBody = waterBody;
+        } else {
+            this.waterBody = null;
         }
     }
 
@@ -69,4 +70,36 @@ public abstract class AbstractBirds implements Birds{
     }
 
     public abstract CLASSIFICATIONS getBirdsClass();
+
+    public void setBirdName(String birdName) {
+        this.birdName = birdName;
+    }
+
+    public void setBirdType(BIRDTYPE birdType) {
+        this.birdType = birdType;
+    }
+
+    public void setCharacteristics(ArrayList<String> characteristics) {
+        this.characteristics = characteristics;
+    }
+
+    public void setExtinct(boolean extinct) {
+        this.extinct = extinct;
+    }
+
+    public void setNumWings(int numWings) {
+        this.numWings = numWings;
+    }
+
+    public void setPreferredFood(ArrayList<FEED> preferredFood) {
+        this.preferredFood = preferredFood;
+    }
+
+    public void setWaterBird(boolean waterBird) {
+        this.waterBird = waterBird;
+    }
+
+    public void setWaterBody(ArrayList<WATERBODY> waterBody) {
+        this.waterBody = waterBody;
+    }
 }

@@ -1,24 +1,24 @@
 import java.util.ArrayList;
 
-public class BirdsOfPrey extends AbstractBirds {
+public class FlightLess extends AbstractBirds {
 
-    public BirdsOfPrey(String birdName, BIRDTYPE birdType, ArrayList<String> characteristics, boolean extinct, int numWings, ArrayList<FEED> preferredFood, boolean waterBird, ArrayList<WATERBODY> waterBody){
+    public FlightLess(String birdName, BIRDTYPE birdType, ArrayList<String> characteristics, boolean extinct, int numWings, ArrayList<FEED> preferredFood, boolean waterBird, ArrayList<WATERBODY> waterBody) {
         super(birdName, birdType, characteristics, extinct, numWings, preferredFood, waterBird, waterBody);
         ArrayList<String> chara = new ArrayList<>();
-        chara.add("Sharp, Hooked Beak with Visible Nostrils.");
+        chara.add("Flightless Birds live on the ground and have no (or undeveloped) wings.");
 
-        if(birdType != BIRDTYPE.HAWKS && birdType != BIRDTYPE.EAGLES && birdType != BIRDTYPE.OSPREY){
-            throw new IllegalArgumentException("Birds of prey include Hawks, Eagles, and Osprey");
+        if(birdType != BIRDTYPE.EMUS && birdType != BIRDTYPE.KIWIS && birdType != BIRDTYPE.MOAS){
+            throw new IllegalArgumentException("Flightless birds include emus, kiwis, and moas.");
         }
     }
 
     @Override
     public CLASSIFICATIONS getBirdsClass() {
-        return CLASSIFICATIONS.BIRDS_OF_PREY;
+        return CLASSIFICATIONS.FLIGHTLESS;
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         String desc;
         String extinct;
         if (isExtinct()){
@@ -29,8 +29,12 @@ public class BirdsOfPrey extends AbstractBirds {
         desc = "Bird Name:" + super.getBirdName() + " Bird Type: " + getBirdType() + "\n" +
                 " Characteristics: " + super.getCharacteristics() + "\n" +
                 " Extinction: " + extinct + "Number of Wings: " + "\n" +
-                " Preferred Food: " + getPreferredFood();
+                " Preferred Food: " + getPreferredFood() + "\n";
 
         return desc;
     }
 }
+
+
+
+
