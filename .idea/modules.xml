@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/NEUOOP22F.iml" filepath="$PROJECT_DIR$/NEUOOP22F.iml" />
+      <module fileurl="file://$PROJECT_DIR$/temp1/temp1.iml" filepath="$PROJECT_DIR$/temp1/temp1.iml" />
     </modules>
   </component>
 </project>
