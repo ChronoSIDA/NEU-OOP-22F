@@ -2,8 +2,8 @@ import java.util.ArrayList;
 
 public class BirdsOfPrey extends AbstractBirds {
 
-    public BirdsOfPrey(String birdName, BIRDTYPE birdType, ArrayList<String> characteristics, boolean extinct, int numWings, ArrayList<FEED> preferredFood, boolean waterBird, ArrayList<WATERBODY> waterBody){
-        super(birdName, birdType, characteristics, extinct, numWings, preferredFood, waterBird, waterBody);
+    public BirdsOfPrey(String birdName, BIRDTYPE birdType, ArrayList<String> characteristics, boolean extinct, int numWings, ArrayList<FEED> preferredFood, boolean waterBird){
+        super(birdName, birdType, characteristics, extinct, numWings, preferredFood, waterBird);
         ArrayList<String> chara = new ArrayList<>();
         chara.add("Sharp, Hooked Beak with Visible Nostrils.");
 

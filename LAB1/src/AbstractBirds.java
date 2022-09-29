@@ -14,9 +14,8 @@ public abstract class AbstractBirds implements Birds{
     protected ArrayList<FEED> preferredFood;
 
     protected boolean waterBird;
-    protected ArrayList<WATERBODY> waterBody;
 
-    public AbstractBirds(String birdName, BIRDTYPE birdType, ArrayList<String> characteristics, boolean extinct, int numWings, ArrayList<FEED> preferredFood, boolean waterBird, ArrayList<WATERBODY> waterBody){
+    public AbstractBirds(String birdName, BIRDTYPE birdType, ArrayList<String> characteristics, boolean extinct, int numWings, ArrayList<FEED> preferredFood, boolean waterBird){
         if (preferredFood.size() < 2 || preferredFood.size() > 4){
             throw new IllegalArgumentException("Birds' preferred food should in range of 2 to 4 items");
         }
@@ -34,11 +33,6 @@ public abstract class AbstractBirds implements Birds{
         this.numWings = numWings;
         this.preferredFood = preferredFood;
 
-        if (waterBird == true){
-            this.waterBody = waterBody;
-        } else {
-            this.waterBody = null;
-        }
     }
 
     public String getBirdName() {
@@ -63,10 +57,6 @@ public abstract class AbstractBirds implements Birds{
 
     public ArrayList<FEED> getPreferredFood() {
         return preferredFood;
-    }
-
-    public ArrayList<WATERBODY> getWaterBody() {
-        return waterBody;
     }
 
     public abstract CLASSIFICATIONS getBirdsClass();
@@ -97,9 +87,5 @@ public abstract class AbstractBirds implements Birds{
 
     public void setWaterBird(boolean waterBird) {
         this.waterBird = waterBird;
-    }
-
-    public void setWaterBody(ArrayList<WATERBODY> waterBody) {
-        this.waterBody = waterBody;
     }
 }

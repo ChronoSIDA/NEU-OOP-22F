@@ -2,8 +2,8 @@ import java.util.ArrayList;
 
 public class FlightLess extends AbstractBirds {
 
-    public FlightLess(String birdName, BIRDTYPE birdType, ArrayList<String> characteristics, boolean extinct, int numWings, ArrayList<FEED> preferredFood, boolean waterBird, ArrayList<WATERBODY> waterBody) {
-        super(birdName, birdType, characteristics, extinct, numWings, preferredFood, waterBird, waterBody);
+    public FlightLess(String birdName, BIRDTYPE birdType, ArrayList<String> characteristics, boolean extinct, int numWings, ArrayList<FEED> preferredFood, boolean waterBird) {
+        super(birdName, birdType, characteristics, extinct, numWings, preferredFood, waterBird);
         ArrayList<String> chara = new ArrayList<>();
         chara.add("Flightless Birds live on the ground and have no (or undeveloped) wings.");
 
