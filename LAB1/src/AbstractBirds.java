@@ -61,6 +61,8 @@ public abstract class AbstractBirds implements Birds{
 
     public abstract CLASSIFICATIONS getBirdsClass();
 
+    public boolean isWaterBird(){return waterBird; }
+
     public void setBirdName(String birdName) {
         this.birdName = birdName;
     }
