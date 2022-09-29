@@ -42,11 +42,11 @@ public class Parrots extends AbstractBirds{
         } else {
             extinct = "No ";
         }
-        desc = "Bird Name:" + super.getBirdName() + " Bird Type: " + getBirdType() + "\n" +
-                " Characteristics: " + super.getCharacteristics() + "\n" +
+        desc = "Bird Name:" +  this.birdName + " Bird Type: " + this.birdType + "\n" +
+                " Characteristics: " + this.characteristics + "\n" +
                 " Extinction: " + extinct + "Number of Wings: " + "\n" +
-                " Preferred Food: " + getPreferredFood() + "\n" +
-                " Number of Words: " + numOfWords + " Favorite Phrase: " + favoritePhrase + "\n";
+                " Preferred Food: " + this.preferredFood + "\n" +
+                " Number of Words: " + this.numOfWords + " Favorite Phrase: " + this.favoritePhrase + "\n";
 
         return desc;
     }

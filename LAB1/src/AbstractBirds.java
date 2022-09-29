@@ -1,20 +1,20 @@
 import java.util.ArrayList;
 
 public abstract class AbstractBirds implements Birds{
-    private String birdName;
+    protected String birdName;
 
-    private BIRDTYPE birdType;
+    protected BIRDTYPE birdType;
 
-    private ArrayList<String> characteristics;
+    protected ArrayList<String> characteristics;
 
-    private boolean extinct;
+    protected boolean extinct;
 
-    private int numWings;
+    protected int numWings;
 
-    private ArrayList<FEED> preferredFood;
+    protected ArrayList<FEED> preferredFood;
 
-    private boolean waterBird;
-    private ArrayList<WATERBODY> waterBody;
+    protected boolean waterBird;
+    protected ArrayList<WATERBODY> waterBody;
 
     public AbstractBirds(String birdName, BIRDTYPE birdType, ArrayList<String> characteristics, boolean extinct, int numWings, ArrayList<FEED> preferredFood, boolean waterBird, ArrayList<WATERBODY> waterBody){
         if (preferredFood.size() < 2 || preferredFood.size() > 4){
