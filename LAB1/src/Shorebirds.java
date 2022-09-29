@@ -29,12 +29,19 @@ public class Shorebirds extends AbstractBirds{
     @Override
     public String toString() {
         String desc;
-        String extinct;
+        String extinct, waterBird;
         if (isExtinct()){
             extinct = "Yes ";
         } else {
             extinct = "No ";
         }
+
+        if(isWaterBird()){
+            waterBird = "Yes";
+        } else {
+            waterBird = "No";
+        }
+
         desc = "Bird Name:" + this.birdName + " Bird Type: " + this.birdType + "\n" +
                 " Characteristics: " + this.characteristics + "\n" +
                 " Extinction: " + extinct + " Water Bird: " + waterBird + "\n" +
