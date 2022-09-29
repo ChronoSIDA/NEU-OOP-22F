@@ -26,10 +26,10 @@ public class Owls extends AbstractBirds{
         } else {
             extinct = "No ";
         }
-        desc = "Bird Name:" + this.birdName + " Bird Type: " + this.birdType + "\n" +
-                " Characteristics: " + this.characteristics + "\n" +
+        desc = "Bird Name:" + super.getBirdName() + " Bird Type: " + getBirdType() + "\n" +
+                " Characteristics: " + super.getCharacteristics() + "\n" +
                 " Extinction: " + extinct + "Number of Wings: " + "\n" +
-                " Preferred Food: " + this.preferredFood + "\n";
+                " Preferred Food: " + getPreferredFood() + "\n";
 
         return desc;
     }

@@ -37,7 +37,8 @@ public class Shorebirds extends AbstractBirds{
         }
         desc = "Bird Name:" + this.birdName + " Bird Type: " + this.birdType + "\n" +
                 " Characteristics: " + this.characteristics + "\n" +
-                " Extinction: " + extinct + "Number of Wings: " + "\n" +
+                " Extinction: " + extinct + " Water Bird: " + waterBird + "\n" +
+                " Number of Wings: " + "\n" +
                 " Preferred Food: " + this.preferredFood + "\n";
 
         return desc;
