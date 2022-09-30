@@ -2,10 +2,10 @@ import java.util.ArrayList;
 
 public class Owls extends AbstractBirds{
 
-    public Owls(String birdName, BIRDTYPE birdType, ArrayList<String> characteristics, boolean extinct, int numWings, ArrayList<FEED> preferredFood, boolean waterBird) {
-        super(birdName, birdType, characteristics, extinct, numWings, preferredFood, waterBird);
-        ArrayList<String> chara = new ArrayList<>();
-        chara.add("Owls are distinguished by the facial disks that frame the eyes and bill. ");
+    public Owls(String birdName, BIRDTYPE birdType, boolean extinct, int numWings, ArrayList<FEED> preferredFood, boolean waterBird) {
+        super(birdName, birdType, extinct, numWings, preferredFood, waterBird);
+        characteristics = new ArrayList<>();
+        characteristics.add("Owls are distinguished by the facial disks that frame the eyes and bill. ");
 
         if(birdType != BIRDTYPE.OWLS){
             throw new IllegalArgumentException("The bird type has to be Owls");

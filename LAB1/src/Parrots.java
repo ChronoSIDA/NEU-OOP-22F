@@ -4,10 +4,10 @@ public class Parrots extends AbstractBirds{
     private int numOfWords;
     private String favoritePhrase;
 
-    public Parrots(String birdName, BIRDTYPE birdType, int numOfWords, String favoritePhrase, ArrayList<String> characteristics, boolean extinct, int numWings, ArrayList<FEED> preferredFood, boolean waterBird) {
-        super(birdName, birdType, characteristics, extinct, numWings, preferredFood, waterBird);
-        ArrayList<String> chara = new ArrayList<>();
-        chara.add("Short, curved beak and are known for their intelligence and ability to mimic sounds.");
+    public Parrots(String birdName, BIRDTYPE birdType, int numOfWords, String favoritePhrase, boolean extinct, int numWings, ArrayList<FEED> preferredFood, boolean waterBird) {
+        super(birdName, birdType, extinct, numWings, preferredFood, waterBird);
+        characteristics = new ArrayList<>();
+        characteristics.add("Short, curved beak and are known for their intelligence and ability to mimic sounds.");
 
         if ( 0 > numOfWords ||  numOfWords > 100) {
             throw new IllegalArgumentException("Pet parrots can learn a vocabulary  of up to 100 words. ");

@@ -6,8 +6,8 @@ public class Shorebirds extends AbstractBirds{
 
     public Shorebirds(String birdName, BIRDTYPE birdType, boolean extinct, int numWings, ArrayList<FEED> preferredFood, boolean waterBird) {
         super(birdName, birdType, extinct, numWings, preferredFood, waterBird);
-        ArrayList<String> chara = new ArrayList<>();
-        chara.add("Shorebirds live near water sources including wetlands, freshwater and saltwater shorelands, or ocean.");
+        characteristics = new ArrayList<>();
+        characteristics.add("Shorebirds live near water sources including wetlands, freshwater and saltwater shorelands, or ocean.");
 
         for(WATERBODY water: waterBody){
             if (water != WATERBODY.WETLANDS && water != WATERBODY.OCEAN &&

@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 
 public class Conservatories implements Conservatory{
@@ -108,16 +110,37 @@ public class Conservatories implements Conservatory{
 
   @Override
   public void printSign(Aviary aviary) {
-
+    System.out.println(aviary);
   }
 
   @Override
   public void printMap() {
-
+    for (Aviary aviary: aviaryArrayList){
+      System.out.println(aviary);
+    }
   }
 
   @Override
   public void printIndex() {
+    Object[] objects = Bird_Aviary.keySet().toArray();
+    Arrays.sort(Bird_Aviary.keySet().toArray(), new Comparator<Object>() {
+      @Override
+      public int compare(Object o1, Object o2) {
+        if(o1 instanceof Birds && o2 instanceof Birds){
+          Birds b1 = (Birds) o1;
+          Birds b2 = (Birds) o2;
+          return b1.getBirdName().compareTo(b2.getBirdName());
+
+        }
+        throw new RuntimeException("Class exception");
+      }
+    });
+//
+    for(Object object:objects){
+      Birds birds = (Birds) object;
+      System.out.println("Bird Name:" + birds.getBirdName()+ "\n" + "Location of the bird:" + Bird_Aviary.get(birds).getLocation());
+    }
+
 
 
   }

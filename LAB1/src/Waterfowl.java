@@ -4,10 +4,10 @@ public class Waterfowl extends AbstractBirds{
   private boolean waterBird;
   private ArrayList<WATERBODY> waterBody;
 
-  public Waterfowl(String birdName, BIRDTYPE birdType, ArrayList<String> characteristics, boolean extinct, int numWings, ArrayList<FEED> preferredFood, boolean waterBird) {
-    super(birdName, birdType, characteristics, extinct, numWings, preferredFood, waterBird);
-    ArrayList<String> chara = new ArrayList<>();
-    chara.add("Waterfowls live near water sources.");
+  public Waterfowl(String birdName, BIRDTYPE birdType,  boolean extinct, int numWings, ArrayList<FEED> preferredFood, boolean waterBird) {
+    super(birdName, birdType, extinct, numWings, preferredFood, waterBird);
+    characteristics = new ArrayList<>();
+    characteristics.add("Waterfowls live near water sources.");
 
     for(WATERBODY water: waterBody){
       if (water != WATERBODY.FRESH && water != WATERBODY.SALT){

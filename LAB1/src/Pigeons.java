@@ -2,10 +2,10 @@ import java.util.ArrayList;
 
 public class Pigeons extends AbstractBirds{
 
-    public Pigeons(String birdName, BIRDTYPE birdType, ArrayList<String> characteristics, boolean extinct, int numWings, ArrayList<FEED> preferredFood, boolean waterBird) {
-        super(birdName, birdType, characteristics, extinct, numWings, preferredFood, waterBird);
-        ArrayList<String> chara = new ArrayList<>();
-        chara.add("Pigeons feeding their young 'bird milk' very similar to the milk of mammals ");
+    public Pigeons(String birdName, BIRDTYPE birdType, boolean extinct, int numWings, ArrayList<FEED> preferredFood, boolean waterBird) {
+        super(birdName, birdType, extinct, numWings, preferredFood, waterBird);
+        characteristics = new ArrayList<>();
+        characteristics.add("Pigeons feeding their young 'bird milk' very similar to the milk of mammals ");
 
         if(birdType != BIRDTYPE.PIGEONS || birdType != BIRDTYPE.DOVES || birdType != BIRDTYPE.EXTINCT_PIGEONS){
             throw new IllegalArgumentException("The bird type has to either pigeons, doves, or extincted pigeons");
