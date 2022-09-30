@@ -6,6 +6,8 @@ public class Aviaries implements Aviary {
   private Location aviaryLocation;
 
 
+
+
   public Aviaries(Location aviaryLocation) {
     ListOfBirds = new ArrayList<>();
     this.aviaryLocation = aviaryLocation;//only initialize the location of aviary with the constructor

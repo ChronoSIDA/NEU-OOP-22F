@@ -3,7 +3,7 @@ import java.util.HashMap;
 
 public class Conservatories implements Conservatory{
   //map location to corresponding aviaries
-  private HashMap<Location, Aviary> Location_Aviary;
+  //private HashMap<Location, Aviary> Location_Aviary;
 
   //map the food to its quantity
   private HashMap<FEED, Integer> Food_Quantity;
@@ -12,18 +12,21 @@ public class Conservatories implements Conservatory{
   //Store the list of aviaries in the conservatory
   private ArrayList<Aviary> aviaryArrayList;
 
+  //Store the info of Bird to its aviaries
+  private HashMap<Birds, Aviary> Bird_Aviary;
+
 
   public Conservatories(){
     for (FEED food: FEED.values()){
       Food_Quantity.put(food, 0);//initialize the Food quantity
     }
-    Location_Aviary = new HashMap<>();
+    //Location_Aviary = new HashMap<>();
     Food_Quantity = new HashMap<>();
     aviaryArrayList = new ArrayList<>();
     for(Location location: Location.values()){//start from the enum Location, initialize the 20 aviaries
       Aviary aviary = new Aviaries(location);
       aviaryArrayList.add(aviary);//initialize with enum in the Location;
-      Location_Aviary.put(location, aviary);//initialize the Location-Aviary map;
+     // Location_Aviary.put(location, aviary);//initialize the Location-Aviary map;
 
     }
   }
@@ -42,15 +45,18 @@ public class Conservatories implements Conservatory{
     for (Aviary aviary : aviaryArrayList) {
       if (aviary.getSize() == 0) {//it's empty, so we can directly put the bird in
         aviary.addBird(birds);
+        Bird_Aviary.put(birds, aviary);//put the aviary and the bird into the map
         flag = 1;
         break;
-      } else {//not empty and we need to check if the bird in the aviary is BirdsOfPrey
+      } else if(aviary.getSize() < 5){//the aviary is not full
+        //not empty, and we need to check if the bird in the aviary is BirdsOfPrey
         if (birds instanceof BirdsOfPrey) {// the bird is BirdsOfPrey, and it should group with birdsOfprey
           //First traverse the list, if the birdlist in the aviary is empty, then we
           //can direct add the bird, if not empty, then we should check the bird in the
           // birdlist and make sure they are BirdsOfPrey
           if (aviary.getBird() instanceof BirdsOfPrey) {
             aviary.addBird(birds);
+            Bird_Aviary.put(birds, aviary);//put the aviary and the bird into the map
             flag = 1;
             break;
           }
@@ -59,6 +65,7 @@ public class Conservatories implements Conservatory{
         if (birds instanceof FlightLess) {
           if (aviary.getBird() instanceof FlightLess) {
             aviary.addBird(birds);
+            Bird_Aviary.put(birds, aviary);//put the aviary and the bird into the map
             flag = 1;
             break;
           }
@@ -66,6 +73,7 @@ public class Conservatories implements Conservatory{
         if (birds.isWaterBird()) {
           if (aviary.getBird().isWaterBird()) {
             aviary.addBird(birds);
+            Bird_Aviary.put(birds, aviary);//put the aviary and the bird into the map
             flag = 1;
             break;
           }
@@ -94,8 +102,8 @@ public class Conservatories implements Conservatory{
   }
 
   @Override
-  public Location getAviary(Birds birds) {
-    return null;
+  public String getAviary(Birds birds) {
+    return "The bird is in the aviary of " + Bird_Aviary.get(birds).getLocation();
   }
 
   @Override
@@ -110,6 +118,7 @@ public class Conservatories implements Conservatory{
 
   @Override
   public void printIndex() {
+
 
   }
 }
