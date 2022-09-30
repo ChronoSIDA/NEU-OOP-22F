@@ -16,7 +16,7 @@ public abstract class AbstractBirds implements Birds{
     protected boolean waterBird;
     protected CLASSIFICATIONS classifications = CLASSIFICATIONS.PIGEONS;
 
-    public AbstractBirds(String birdName, BIRDTYPE birdType, ArrayList<String> characteristics, boolean extinct, int numWings, ArrayList<FEED> preferredFood, boolean waterBird){
+    public AbstractBirds(String birdName, BIRDTYPE birdType, boolean extinct, int numWings, ArrayList<FEED> preferredFood, boolean waterBird){
         if (preferredFood.size() < 2 || preferredFood.size() > 4){
             throw new IllegalArgumentException("Birds' preferred food should in range of 2 to 4 items");
         }
@@ -29,7 +29,6 @@ public abstract class AbstractBirds implements Birds{
 
         this.birdName = birdName;
         this.birdType = birdType;
-        this.characteristics = characteristics;
         this.extinct = extinct;
         this.numWings = numWings;
         this.preferredFood = preferredFood;
