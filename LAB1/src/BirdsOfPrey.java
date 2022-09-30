@@ -27,7 +27,7 @@ public class BirdsOfPrey extends AbstractBirds {
             extinct = "No ";
         }
         desc = "Bird Name:" + this.birdName + " Bird Type: " + this.birdType + "\n" +
-                " Characteristics: " + this.characteristics + "\n" +
+                " Characteristics: " + this.characteristics + "\n" +///////////////////
                 " Extinction: " + extinct + "Number of Wings: " + "\n" +
                 " Preferred Food: " + this.preferredFood + "\n";
 

@@ -14,6 +14,7 @@ public abstract class AbstractBirds implements Birds{
     protected ArrayList<FEED> preferredFood;
 
     protected boolean waterBird;
+    protected CLASSIFICATIONS classifications = CLASSIFICATIONS.PIGEONS;
 
     public AbstractBirds(String birdName, BIRDTYPE birdType, ArrayList<String> characteristics, boolean extinct, int numWings, ArrayList<FEED> preferredFood, boolean waterBird){
         if (preferredFood.size() < 2 || preferredFood.size() > 4){

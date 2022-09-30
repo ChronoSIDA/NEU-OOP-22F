@@ -10,6 +10,9 @@ public class Aviaries implements Aviary {
     ListOfBirds = new ArrayList<>();
     this.aviaryLocation = aviaryLocation;//only initialize the location of aviary with the constructor
   }
+  public Birds getBird(){//return the first bird in the Birdlist
+    return ListOfBirds.get(0);
+  }
 
   @Override
   public int getSize() {//return the number of birds in the current aviary
@@ -25,6 +28,8 @@ public class Aviaries implements Aviary {
   public Location getLocation() {
     return this.aviaryLocation;
   }
+
+
 
   @Override
   public String toString() {
