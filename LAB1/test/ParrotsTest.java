@@ -7,25 +7,25 @@ import org.junit.Test;
 
 
 public class ParrotsTest {
-    private ArrayList<Bird> birds;
-    private HashMap<Bird, ArrayList<String>> expectedChara;
-    private HashMap<Bird, Boolean> expectedExtinct;
-    private HashMap<Bird, Integer> expectedWings;
-    private HashMap<Bird, ArrayList<FOODS>> expectedFoods;
+    private ArrayList<Birds> birds;
+    private HashMap<Birds, ArrayList<String>> expectedChara;
+    private HashMap<Birds, Boolean> expectedExtinct;
+    private HashMap<Birds, Integer> expectedWings;
+    private HashMap<Birds, ArrayList<Feed>> expectedFoods;
 
 
-    private HashMap<Bird, BIRDTYPE> expectedType;
-    private HashMap<Bird, String> expectedName;
-    private HashMap<Bird, String> expectedSaying;
+    private HashMap<Birds, Birdtype> expectedType;
+    private HashMap<Birds, String> expectedName;
+    private HashMap<Birds, String> expectedSaying;
     private String[] characterList;
-    private FOODS[] foodsList;
+    private Feed[] foodsList;
     private String[] favoriteSayingList;
     private int vocabulary;
-    private HashMap<Bird, Integer> expectedVocab;
+    private HashMap<Birds, Integer> expectedVocab;
 
     private String[] nameList;
 
-    private BIRDTYPE[] typeList;
+    private Birdtype[] typeList;
 
 
     @Before
@@ -43,13 +43,13 @@ public class ParrotsTest {
 
         nameList = new String[]{"type1", "type2", "type3","type4","type5","type6","type7","type8", "type9"};
         characterList = new String[]{"enormous", "very heavy", "small", "light", "black"};
-        foodsList = new FOODS[]{FOODS.FISH,  FOODS.BERRIES,
-            FOODS.SEEDS, FOODS.FRUIT, FOODS.INSECTS, FOODS.OTHERBIRDS,
-            FOODS.EGGS, FOODS.SMALLMAMMALS, FOODS.FISH, FOODS.BUDS,
-            FOODS.LARVAE, FOODS.AQUATICINVERTEBRATES,
-            FOODS.NUTS, FOODS.VEGETATION};
+        foodsList = new Feed[]{Feed.FISH,  Feed.BERRIES,
+                Feed.SEEDS, Feed.FRUIT, Feed.INSECTS, Feed.BIRDS,
+                Feed.EGGS, Feed.SMALL_MAMMALS, Feed.FISH, Feed.BUDS,
+                Feed.LARVAE, Feed.AQUATIC_INVERTEBRATES,
+                Feed.NUTS, Feed.VEGETATION};
 
-        typeList = new BIRDTYPE[]{BIRDTYPE.ROSERINGPARAKEET, BIRDTYPE.GRAYPARROT, BIRDTYPE.SULFURCRESTEDCOCKATOO};
+        typeList = new Birdtype[]{Birdtype.ROSE_RING_PARAKEET, Birdtype.GRAY_PARROT, Birdtype.SULFUR_CRESTED_COCKATOO};
         favoriteSayingList = new String[]{"2 sum", "binary search", "leetcode", "accepted", "run time error"};
 
 
@@ -70,7 +70,7 @@ public class ParrotsTest {
 
 
             // the same idea for foods, but here the list of foods' size must be 2 - 4
-            ArrayList<FOODS> foods = new ArrayList<>();
+            ArrayList<Feed> foods = new ArrayList<>();
             // randomly set the size of the foods
             int randFoodNumber = random.nextInt(2, 4);
 
@@ -91,8 +91,8 @@ public class ParrotsTest {
             //
             int vocabulary = random.nextInt(0,100);
 
-            BIRDTYPE type = this.typeList[typeIdx];
-            Parrots parrot = new Parrots(name,type, favoriteSaying, vocabulary, chara, extinct, wing, foods);
+            Birdtype type = this.typeList[typeIdx];
+            Parrots parrot = new Parrots(name,type, vocabulary,  favoriteSaying, extinct, wing, foods);
 
             expectedType.put(parrot, type);
             birds.add(parrot);
@@ -109,25 +109,25 @@ public class ParrotsTest {
 
     @Test
     public void testGetCategory() {
-        for (Bird bird : birds) {
+        for (Birds bird : birds) {
             if (bird instanceof Parrots) {
-                Assert.assertEquals(CLASSIFICATION.PARROTS, bird.getBirdsCategory());
+                Assert.assertEquals(Classification.PARROTS, bird.getBirdsClass());
             }
         }
     }
 
     @Test
     public void testGetType() {
-        for (Bird bird : birds) {
+        for (Birds bird : birds) {
             if (bird instanceof Parrots) {
-                Assert.assertEquals(expectedType.get(bird), bird.getType());
+                Assert.assertEquals(expectedType.get(bird), bird.getBirdType());
             }
         }
     }
 
     @Test
     public void testGetNumberOfWord() {
-        for (Bird bird : birds) {
+        for (Birds bird : birds) {
             if (bird instanceof Parrots) {
                 Assert.assertEquals(expectedVocab.get(bird), (Integer) ((Parrots) bird).getNumberOfWord());
             }
@@ -138,9 +138,9 @@ public class ParrotsTest {
 
     @Test
     public void testGetFavoriteSaying() {
-        for (Bird bird : birds) {
+        for (Birds bird : birds) {
             if (bird instanceof Parrots) {
-                Assert.assertEquals(expectedSaying.get(bird), ((Parrots) bird).getFavoriteSaying());
+                Assert.assertEquals(expectedSaying.get(bird), ((Parrots) bird).getFavoritePhrase());
             }
 
         }

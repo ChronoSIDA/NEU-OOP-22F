@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public interface Conservatory {
   //assign a new bird to an aviary in the conservatory
   void addBird(Birds birds);
@@ -21,5 +23,5 @@ public interface Conservatory {
   void printIndex();
 
 
-
+  ArrayList<Aviary> getAviaryList();
 }

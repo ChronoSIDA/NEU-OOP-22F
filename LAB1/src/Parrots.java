@@ -34,6 +34,7 @@ public class Parrots extends AbstractBirds{
 
     @Override
     public String toString() {
-        return super.toString()+"Waterbird: no";
+        return super.toString()+" Waterbird: No \n" +
+                " Number of Words: " + this.numOfWords + " Favorite Phrase: " + this.favoritePhrase + "\n";
     }
 }

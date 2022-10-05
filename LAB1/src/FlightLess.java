@@ -19,7 +19,7 @@ public class FlightLess extends AbstractBirds {
 
     @Override
     public String toString() {
-        return super.toString()+"Waterbird: no";
+        return super.toString()+" Waterbird: No \n";
     }
 }
 

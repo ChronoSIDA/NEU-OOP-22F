@@ -17,7 +17,7 @@ public abstract class AbstractBirds implements Birds{
 
     public AbstractBirds(String birdName, Birdtype birdType, boolean extinct, int numWings, ArrayList<Feed> preferredFood){
         if (preferredFood.size() < 2 || preferredFood.size() > 4){
-            throw new IllegalArgumentException("Birds' preferred food should in range of 2 to 4 items");
+            throw new IllegalArgumentException("Birds' preferred food should in range of 2 to 4 items.");
         }
 
         if (numWings < 0){
