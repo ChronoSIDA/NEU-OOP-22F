@@ -64,7 +64,7 @@ public class ParrotsTest {
 
             // add the randomly generated characteristic to the chara which is a param list putted into the constructor latter
             chara.add(characterList[randomIndex]);
-            int wing = random.nextInt(2,11);
+            int wing = random.nextInt(0,6);
             int typeIdx = random.nextInt(typeList.length - 1);
 
 
@@ -144,9 +144,5 @@ public class ParrotsTest {
             }
 
         }
-    }
-    @Test(expected = IllegalArgumentException.class)
-    public void inValiBirdType(){
-
     }
 }

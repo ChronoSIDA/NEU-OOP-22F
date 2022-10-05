@@ -5,96 +5,127 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class DriverTest {
-    private Conservatories d1;
+    private Conservatories conservatoryOne;
 
-    private Conservatories d2;
+    private Conservatories conservatoryTwo;
 
 
 
-    private Feed[] foodsList;
-    private Pigeons p1;
-    private FlightLess p2;
-    private Pigeons p3;
-    private Pigeons p4;
-    private BirdsOfPrey hawk;
-    private FlightLess emus;
+    private Feed[] feedList;
+    private Pigeons pigeon1;
+    private FlightLess flightLess;
+    private Pigeons pigeon2;
+    private Pigeons pigeon3;
+    
+    // test birds
+    private BirdsOfPrey eagle;
+    private FlightLess moas;
     private Owls owl;
-
     private Parrots parrot;
     private Pigeons pigeon;
-    private Shorebirds greatauk;
-    private Waterfowl duck;
-    private Parrots extinctParrot;
+    private Shorebirds hornedPuffin;
+    private Waterfowl goose;
 
 
 
     @Before
     public void setUp() throws Exception {
-        d1 = new Conservatories();
-        d2 = new Conservatories();
+        conservatoryOne = new Conservatories();
+        conservatoryTwo = new Conservatories();
 
 
-        foodsList = new Feed[]{Feed.FISH,  Feed.BERRIES,
+        feedList = new Feed[]{Feed.FISH,  Feed.BERRIES,
                 Feed.SEEDS, Feed.FRUIT, Feed.INSECTS, Feed.BIRDS,
                 Feed.EGGS, Feed.SMALL_MAMMALS, Feed.FISH, Feed.BUDS,
                 Feed.LARVAE, Feed.AQUATIC_INVERTEBRATES,
                 Feed.NUTS, Feed.VEGETATION};
         ArrayList<Feed> foods = new ArrayList<>();
-        foods.add(foodsList[1]);
-        foods.add(foodsList[2]);
-        p1 = new Pigeons("d", Birdtype.EXTINCT_PIGEONS, true, 2, foods);
-        p2 = new FlightLess("c",Birdtype.KIWIS, false, 0, foods);
-        p3 = new Pigeons("d", Birdtype.EXTINCT_PIGEONS, true, 2, foods);
-        p4 = new Pigeons("d", Birdtype.EXTINCT_PIGEONS, true, 2, foods);
-        d1.addBird(p1);
-        d1.addBird(p2);
-        d1.addBird(p3);
-        d1.addBird(p4);
-        ArrayList<Feed> foodHawk = new ArrayList<>();
-        foodHawk.add(foodsList[0]);
-        foodHawk.add(foodsList[5]);
-        ArrayList<Feed> foodEmus = new ArrayList<>();
-        foodEmus.add(foodsList[0]);
-        foodEmus.add(foodsList[1]);
+        foods.add(feedList[1]);
+        foods.add(feedList[2]);
+
+//        pigeon1 = new Pigeons("d", Birdtype.EXTINCT_PIGEONS, false, 2, foods);
+
+        // Test IllegalArgumentException on extinction
+        pigeon1 = new Pigeons("Real Pigeon", Birdtype.PIGEONS, false, 2, foods);
+
+        flightLess = new FlightLess("KiwisKK",Birdtype.KIWIS, false, 0, foods);
+        pigeon2 = new Pigeons("Pigeon Alive", Birdtype.PIGEONS, false, 2, foods);
+        pigeon3 = new Pigeons("The Only Dove", Birdtype.DOVES, false, 2, foods);
+
+        // Test extinction
+
+        conservatoryOne.addBird(pigeon1);
+        conservatoryOne.addBird(flightLess);
+        conservatoryOne.addBird(pigeon2);
+        conservatoryOne.addBird(pigeon3);
+
+
+
+        feedList = new Feed[]{Feed.FISH,  Feed.BERRIES,
+                Feed.SEEDS, Feed.FRUIT, Feed.INSECTS, Feed.BIRDS,
+                Feed.EGGS, Feed.SMALL_MAMMALS, Feed.FISH, Feed.BUDS,
+                Feed.LARVAE, Feed.AQUATIC_INVERTEBRATES,
+                Feed.NUTS, Feed.VEGETATION};
+
+        ArrayList<Feed> foodEagle = new ArrayList<>();
+        foodEagle.add(Feed.FISH);
+        foodEagle.add(Feed.BIRDS);
+        foodEagle.add(Feed.EGGS);
+        foodEagle.add(Feed.INSECTS);
+
+        ArrayList<Feed> foodMoas = new ArrayList<>();
+        foodMoas.add(Feed.EGGS);
+        foodMoas.add(Feed.BIRDS);
+        foodMoas.add(Feed.INSECTS);
+
         ArrayList<Feed> foodOwl = new ArrayList<>();
-        foodOwl.add(foodsList[1]);
-        foodOwl.add(foodsList[4]);
-        foodOwl.add(foodsList[13]);
+        foodOwl.add(Feed.LARVAE);
+        foodOwl.add(Feed.VEGETATION);
+        foodOwl.add(Feed.INSECTS);
 
         ArrayList<Feed> foodParrot = new ArrayList<>();
-        foodParrot.add(foodsList[2]);
-        foodParrot.add(foodsList[6]);
+        foodParrot.add(Feed.AQUATIC_INVERTEBRATES);
+        foodParrot.add(Feed.VEGETATION);
+        foodParrot.add(Feed.LARVAE);
+        foodParrot.add(Feed.BUDS);
+
         ArrayList<Feed> foodPigeon = new ArrayList<>();
-        foodPigeon.add(foodsList[7]);
-        foodPigeon.add(foodsList[5]);
+        foodPigeon.add(Feed.LARVAE);
+        foodPigeon.add(Feed.VEGETATION);
+        foodPigeon.add(Feed.SMALL_MAMMALS);
+        foodPigeon.add(Feed.INSECTS);
+
         ArrayList<Feed> foodShoreBird = new ArrayList<>();
-        foodShoreBird.add(foodsList[8]);
-        foodShoreBird.add(foodsList[9]);
-        ArrayList<Feed> foodDuck = new ArrayList<>();
-        foodDuck.add(foodsList[10]);
-        foodDuck.add(foodsList[11]);
+        foodShoreBird.add(Feed.SEEDS);
+        foodShoreBird.add(Feed.VEGETATION);
+        foodShoreBird.add(Feed.INSECTS);
+
+        ArrayList<Feed> foodGoose = new ArrayList<>();
+        foodGoose.add(Feed.NUTS);
+        foodGoose.add(Feed.SEEDS);
+        foodGoose.add(Feed.FRUIT);
 
 
-        hawk = new BirdsOfPrey("hk", Birdtype.HAWKS,false, 2, foodHawk);
-        emus = new FlightLess("emus1",Birdtype.EMUS,false, 2, foodEmus);
-        owl = new Owls("ow", Birdtype.OWLS, false, 2, foodOwl);
-        parrot = new Parrots("prt", Birdtype.ROSE_RING_PARAKEET, 10,"Hello",false, 2, foodParrot);
-        parrot = new Parrots("prt", Birdtype.ROSE_RING_PARAKEET, 10,"World",true, 2, foodParrot);
-        pigeon = new Pigeons("b",Birdtype.EXTINCT_PIGEONS, true,2, foodPigeon);
-        greatauk = new Shorebirds("grtauk",Birdtype.GREAT_AUK, false,2, foodShoreBird,new ArrayList<BodyOfWater>(
+        eagle = new BirdsOfPrey("American Eagle", Birdtype.EAGLES,false, 2, foodEagle);
+        moas = new FlightLess("China Moas",Birdtype.MOAS,false, 2, foodMoas);
+        owl = new Owls("Owlllllllls", Birdtype.OWLS, false, 2, foodOwl);
+        parrot = new Parrots("Im Rose One", Birdtype.ROSE_RING_PARAKEET, 10,"Hello",false, 2, foodParrot);
+        parrot = new Parrots("Im Rose Two", Birdtype.ROSE_RING_PARAKEET, 10,"World",false, 2, foodParrot);
+
+        pigeon = new Pigeons("Pigeon the killer", Birdtype.PIGEONS, false,2, foodPigeon);
+        hornedPuffin = new Shorebirds("Auk the Hulk",Birdtype.GREAT_AUK, false,2, foodShoreBird,new ArrayList<BodyOfWater>(
             List.of(new BodyOfWater[]{BodyOfWater.WETLANDS})));
-        duck = new Waterfowl("dc",Birdtype.DUCKS, false,2, foodDuck,new ArrayList<BodyOfWater>(
+        goose = new Waterfowl("Goosebumps",Birdtype.GEESE, false,2, foodGoose,new ArrayList<BodyOfWater>(
             List.of(new BodyOfWater[]{BodyOfWater.SALT})));
-        d1.addBird(hawk);
-        d1.addBird(emus);
-        d1.addBird(owl);
-        d1.addBird(parrot);
-
-        d1.addBird(pigeon);
-        d1.addBird(greatauk);
-        d1.addBird(duck);
 
 
+        conservatoryOne.addBird(eagle);
+        conservatoryOne.addBird(moas);
+        conservatoryOne.addBird(owl);
+        conservatoryOne.addBird(parrot);
+        conservatoryOne.addBird(pigeon);
+        conservatoryOne.addBird(hornedPuffin);
+        conservatoryOne.addBird(goose);
     }
 
 
@@ -102,64 +133,74 @@ public class DriverTest {
 
     @Test
     public void getFoodQuantity() {
-        d1.calculateFood();
-        }
+        conservatoryOne.calculateFood();
+    }
 
     @Test
     public void testGetAviaryOfBird(){
-
-            //d1.printMap();
-            //System.out.println(d1.getBirdDictionary());
-            //System.out.println(d1.getAviaryOfBird(p1));
-//        d1.printBirdIndex();
-
-    Assert.assertEquals(Location.L3, d1.getAviary(hawk));
-        Assert.assertEquals(Location.L2, d1.getAviary(emus));
-        Assert.assertEquals(Location.L1, d1.getAviary(owl));
-        Assert.assertEquals(Location.L1, d1.getAviary(parrot));
-        Assert.assertEquals(Location.L4, d1.getAviary(pigeon));
-        Assert.assertEquals(Location.L4, d1.getAviary(greatauk));
-        Assert.assertEquals(Location.L5, d1.getAviary(duck));
-
+        Assert.assertEquals(Location.L3, conservatoryOne.getAviary(eagle));
+        Assert.assertEquals(Location.L2, conservatoryOne.getAviary(moas));
+        Assert.assertEquals(Location.L1, conservatoryOne.getAviary(owl));
+        Assert.assertEquals(Location.L1, conservatoryOne.getAviary(parrot));
+        Assert.assertEquals(Location.L4, conservatoryOne.getAviary(pigeon));
+        Assert.assertEquals(Location.L4, conservatoryOne.getAviary(hornedPuffin));
+        Assert.assertEquals(Location.L5, conservatoryOne.getAviary(goose));
     }
 
     @Test
     public void printSignOfAviary() {
-        ArrayList<Aviary> aviaryList = d1.getAviaryList();
-        for (Aviary aviary: aviaryList) {
-            d1.printSign(aviary);
+        ArrayList<Aviary> aviaryListOne = conservatoryOne.getAviaryList();
+        for (Aviary aviary: aviaryListOne) {
+            conservatoryOne.printSign(aviary);
+        }
+        ArrayList<Aviary> aviaryListTwo = conservatoryTwo.getAviaryList();
+        for (Aviary aviary: aviaryListTwo) {
+            conservatoryOne.printSign(aviary);
         }
     }
     @Test
     public void printMap() {
-        d1.printMap();
+        conservatoryOne.printMap();
     }
 
     @Test
     public void printBirdIndex() {
-        d1.printIndex();
-    }
-
-    @Test
-    public void getSignOfAviary() {
-        //d1.getSignOfAviary();
+        conservatoryOne.printIndex();
     }
     @Test
     public void addExtinctBird() {
-        d2.addBird(extinctParrot);
-        Assert.assertEquals(new ArrayList<Aviary>(), d2.getAviaryList());
+        // Test IllegalArgumentException
+        ArrayList<Feed> foods = new ArrayList<>();
+        foods.add(Feed.SMALL_MAMMALS);
+        foods.add(Feed.FISH);
+
+        Birds extinctBird = new Pigeons("Pigeon the killer",Birdtype.EXTINCT_PIGEONS, true,2, foods);
+
+        conservatoryTwo.addBird(extinctBird);
+        Assert.assertEquals(new ArrayList<Aviary>(), conservatoryTwo.getAviaryList());
 
     }
-    @Test (expected = IllegalStateException.class)
+    @Test
     public void addTwentyMoreBird(){
-        for(int i=0;i< 101;i++){
+        for(int i = 0; i < 5; i++){
 
             ArrayList<Feed> foods = new ArrayList<>();
             foods.add(Feed.SMALL_MAMMALS);
             foods.add(Feed.FISH);
 
-            d2.addBird(new Pigeons("b",Birdtype.EXTINCT_PIGEONS,false,2, foods));
-
+            conservatoryTwo.addBird(new Pigeons("b", Birdtype.PIGEONS,false,2, foods));
         }
+    }
+
+    @Test
+    public void checkNumOfWings(){
+        ArrayList<Feed> foods = new ArrayList<>();
+        foods.add(Feed.SMALL_MAMMALS);
+        foods.add(Feed.FISH);
+
+        Birds manyWingsBird = new Pigeons("Pigeon the killer",Birdtype.EXTINCT_PIGEONS, true,100, foods);
+
+        conservatoryTwo.addBird(manyWingsBird);
+        Assert.assertEquals(new ArrayList<Aviary>(), conservatoryTwo.getAviaryList());
     }
 }

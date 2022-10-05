@@ -8,7 +8,7 @@ public interface Conservatory {
   void calculateFood();
 
   //Have a guest look up which aviary a bird is in
-  String getAviary(Birds birds);
+  Location getAviary(Birds birds);
 
   //Print a sign for any given aviary that gives a description of the birds it houses,
   // and any interesting information that it may have about that animal.

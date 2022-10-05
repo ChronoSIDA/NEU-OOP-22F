@@ -7,7 +7,7 @@ public class Pigeons extends AbstractBirds{
         characteristics = new ArrayList<>();
         characteristics.add("Pigeons feeding their young 'bird milk' very similar to the milk of mammals ");
 
-        if(birdType != Birdtype.PIGEONS || birdType != Birdtype.DOVES || birdType != Birdtype.EXTINCT_PIGEONS){
+        if(birdType != Birdtype.PIGEONS && birdType != Birdtype.DOVES && birdType != Birdtype.EXTINCT_PIGEONS){
             throw new IllegalArgumentException("The bird type has to either pigeons, doves, or extincted pigeons");
         }
     }

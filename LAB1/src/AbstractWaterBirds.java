@@ -10,7 +10,7 @@ public abstract class AbstractWaterBirds extends AbstractBirds {
 
   @Override
   public String toString() {
-    return super.toString() + "Waterbird: Yes";
+    return super.toString() + " Waterbird: Yes" + "\n";
 
   }
 }

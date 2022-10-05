@@ -4,21 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7948e5fc-f9e6-4264-b3f9-810baf5dce05" name="Changes" comment="Initial version of the whole lab">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="7948e5fc-f9e6-4264-b3f9-810baf5dce05" name="Changes" comment="Added test cases">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LAB1/src/AbstractBirds.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB1/src/AbstractBirds.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LAB1/src/AbstractWaterBirds.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB1/src/AbstractWaterBirds.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LAB1/src/BirdsOfPrey.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB1/src/BirdsOfPrey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB1/src/Aviaries.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB1/src/Aviaries.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LAB1/src/Conservatories.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB1/src/Conservatories.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LAB1/src/Conservatory.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB1/src/Conservatory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LAB1/src/FlightLess.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB1/src/FlightLess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LAB1/src/Owls.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB1/src/Owls.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LAB1/src/Parrots.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB1/src/Parrots.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LAB1/src/Pigeons.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB1/src/Pigeons.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp1/test/BirdTestList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp1/test/DriverTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB1/test/DriverTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp1/test/ParrotsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB1/test/ParrotsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB1/src/Shorebirds.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB1/src/Shorebirds.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB1/src/Waterfowl.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB1/src/Waterfowl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB1/test/DriverTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB1/test/DriverTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB1/test/ParrotsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB1/test/ParrotsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +83,35 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PersonTest">
+  <component name="RunManager" selected="JUnit.DriverTest">
+    <configuration name="DriverTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NEUOOP22F" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DriverTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DriverTest.addTwentyMoreBird" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NEUOOP22F" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DriverTest" />
+      <option name="METHOD_NAME" value="addTwentyMoreBird" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ParrotsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NEUOOP22F" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ParrotsTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PersonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="NEUOOP22F" />
       <option name="PACKAGE_NAME" value="" />
@@ -107,6 +133,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DriverTest" />
+        <item itemvalue="JUnit.DriverTest.addTwentyMoreBird" />
+        <item itemvalue="JUnit.ParrotsTest" />
         <item itemvalue="JUnit.PersonTest.testFirst" />
         <item itemvalue="JUnit.PersonTest" />
       </list>
@@ -181,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664560597457</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added test cases">
+      <created>1664999649246</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1664999649246</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,7 +242,8 @@
     <MESSAGE value="Edited Birds of Prey, FlightLess Birds, Owls, and Parrots." />
     <MESSAGE value="conservatories added" />
     <MESSAGE value="Initial version of the whole lab" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial version of the whole lab" />
+    <MESSAGE value="Added test cases" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added test cases" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -216,6 +253,11 @@
           <line>4</line>
           <properties field="characteristic" class="AbstractBirds" />
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/LAB1/src/Conservatories.java</url>
+          <line>109</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

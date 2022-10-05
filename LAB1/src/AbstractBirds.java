@@ -93,7 +93,8 @@ public abstract class AbstractBirds implements Birds{
         } else {
             extinct = "No ";
         }
-        desc = "Bird Name:" + this.birdName + " Bird Type: " + this.birdType + "\n" +
+        desc = " Bird Name:" + this.birdName + "\n" +
+                " Bird Type: " + this.birdType + "\n" +
                 " Characteristics: " + this.characteristics + "\n" +
                 " Extinction: " + extinct + "\n" +
                 " Number of Wings: " + "\n" +

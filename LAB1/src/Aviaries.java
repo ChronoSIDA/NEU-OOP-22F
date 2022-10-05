@@ -17,7 +17,7 @@ public class Aviaries implements Aviary {
   public String getListofBirdByName() {
     String s = "";
     for(Birds birds: ListOfBirds){
-      s += birds.getBirdName();
+      s += birds.getBirdName() + " | ";
     }
     return s;
   }

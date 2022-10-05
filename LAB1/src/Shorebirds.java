@@ -16,7 +16,7 @@ public class Shorebirds extends AbstractWaterBirds{
             }
         }
 
-        if(birdType != Birdtype.GREAT_AUK || birdType != Birdtype.HORNED_PUFFIN || birdType != Birdtype.AFRICAN_JACANA){
+        if(birdType != Birdtype.GREAT_AUK && birdType != Birdtype.HORNED_PUFFIN && birdType != Birdtype.AFRICAN_JACANA){
             throw new IllegalArgumentException("Shorebirds include Great Auk, Horned puffin, and African Jacana.");
         }
     }

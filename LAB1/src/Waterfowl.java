@@ -14,7 +14,7 @@ public class Waterfowl extends AbstractWaterBirds{
       }
     }
 
-    if(birdType != Birdtype.DUCKS || birdType != Birdtype.SWANS || birdType != Birdtype.GEESE){
+    if(birdType != Birdtype.DUCKS && birdType != Birdtype.SWANS && birdType != Birdtype.GEESE){
       throw new IllegalArgumentException("Waterfowls include ducks, swans, and geese.");
     }
   }

@@ -19,12 +19,14 @@ public class Conservatories implements Conservatory{
 
 
   public Conservatories(){
-    for (Feed food: Feed.values()){
-      Food_Quantity.put(food, 0);//initialize the Food quantity
-    }
     //Location_Aviary = new HashMap<>();
     Food_Quantity = new HashMap<>();
     aviaryArrayList = new ArrayList<>();
+    Bird_Aviary = new HashMap<>();
+
+    for (Feed food: Feed.values()){
+      Food_Quantity.put(food, 0);//initialize the Food quantity
+    }
     for(Location location: Location.values()){//start from the enum Location, initialize the 20 aviaries
       Aviary aviary = new Aviaries(location);
       aviaryArrayList.add(aviary);//initialize with enum in the Location;
@@ -36,7 +38,7 @@ public class Conservatories implements Conservatory{
   @Override
   public void addBird(Birds birds) {
     if (birds.isExtinct()) {//this bird is already extinct, so we can not assign it to our conservatory.
-      throw new RuntimeException("the bird has been extinct");
+      throw new IllegalArgumentException("The bird is extinct");
     }
     //Before adding a new bird, check the type of the bird, and make sure
     // Flightless birds, birds of prey, and waterfowl should not be mixed with other bird types.
@@ -84,7 +86,7 @@ public class Conservatories implements Conservatory{
     }
     if (flag == 0) {
       //flag ==0 means the bird is not assigned to any aviaries
-      throw new RuntimeException("No aviary is available for this bird");
+      throw new IllegalArgumentException("No aviary is available for this bird");
     }
 
     for(Feed feed: birds.getPreferredFood()){
@@ -104,8 +106,8 @@ public class Conservatories implements Conservatory{
   }
 
   @Override
-  public String getAviary(Birds birds) {
-    return "The bird is in the aviary of " + Bird_Aviary.get(birds).getLocation();
+  public Location getAviary(Birds birds) {
+    return Bird_Aviary.get(birds).getLocation();
   }
 
   @Override
@@ -116,8 +118,8 @@ public class Conservatories implements Conservatory{
   @Override
   public void printMap() {
     for (Aviary aviary: aviaryArrayList){
-      System.out.println("The aviary at" + aviary.getLocation() + "\n" + "All the birds that it houses:\n" + aviary.getListofBirdByName());
-      System.out.println("\n\n");
+      System.out.println(aviary.getLocation() + "\t Aviary \n" +
+              "Birds in the House:\n" +  aviary.getListofBirdByName() + "\n");
     }
   }
 
@@ -136,10 +138,10 @@ public class Conservatories implements Conservatory{
         throw new RuntimeException("Class exception");
       }
     });
-//
+
     for(Object object:objects){
       Birds birds = (Birds) object;
-      System.out.println("Bird Name:" + birds.getBirdName()+ "\n" + "Location of the bird:" + Bird_Aviary.get(birds).getLocation());
+      System.out.println("Bird Name: " + birds.getBirdName()+ "\n" + "Location of the bird: " + Bird_Aviary.get(birds).getLocation() + "\n");
     }
 
 
