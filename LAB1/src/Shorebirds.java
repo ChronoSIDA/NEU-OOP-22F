@@ -1,53 +1,33 @@
 import java.util.ArrayList;
 
-public class Shorebirds extends AbstractBirds{
-    private boolean waterBird;
-    private ArrayList<WATERBODY> waterBody;
+public class Shorebirds extends AbstractWaterBirds{
 
-    public Shorebirds(String birdName, BIRDTYPE birdType, boolean extinct, int numWings, ArrayList<FEED> preferredFood, boolean waterBird) {
-        super(birdName, birdType, extinct, numWings, preferredFood, waterBird);
+
+
+    public Shorebirds(String birdName, Birdtype birdType, boolean extinct, int numWings, ArrayList<Feed> preferredFood, ArrayList<BodyOfWater> bodyOfWaterArrayList) {
+        super(birdName, birdType, extinct, numWings, preferredFood, bodyOfWaterArrayList);
         characteristics = new ArrayList<>();
         characteristics.add("Shorebirds live near water sources including wetlands, freshwater and saltwater shorelands, or ocean.");
 
-        for(WATERBODY water: waterBody){
-            if (water != WATERBODY.WETLANDS && water != WATERBODY.OCEAN &&
-                    water != WATERBODY.FRESHWATER_SHORELANDS && water != WATERBODY.SALTWATER_SHORELANDS){
+        for(BodyOfWater water: bodyOfWaterArrayList){
+            if (water != BodyOfWater.WETLANDS && water != BodyOfWater.OCEAN &&
+                    water != BodyOfWater.FRESHWATER_SHORELANDS && water != BodyOfWater.SALTWATER_SHORELANDS){
                 throw new IllegalArgumentException("Shorebirds be in either wetlands, freshwater and saltwater shorelands, or ocean");
             }
         }
 
-        if(birdType != BIRDTYPE.GREAT_AUK || birdType != BIRDTYPE.HORNED_PUFFIN || birdType != BIRDTYPE.AFRICAN_JACANA){
+        if(birdType != Birdtype.GREAT_AUK || birdType != Birdtype.HORNED_PUFFIN || birdType != Birdtype.AFRICAN_JACANA){
             throw new IllegalArgumentException("Shorebirds include Great Auk, Horned puffin, and African Jacana.");
         }
     }
 
     @Override
-    public CLASSIFICATIONS getBirdsClass() {
-        return CLASSIFICATIONS.SHOREBIRDS;
+    public Classification getBirdsClass() {
+        return Classification.SHOREBIRDS;
     }
 
     @Override
     public String toString() {
-        String desc;
-        String extinct, waterBird;
-        if (isExtinct()){
-            extinct = "Yes ";
-        } else {
-            extinct = "No ";
-        }
-
-        if(isWaterBird()){
-            waterBird = "Yes";
-        } else {
-            waterBird = "No";
-        }
-
-        desc = "Bird Name:" + this.birdName + " Bird Type: " + this.birdType + "\n" +
-                " Characteristics: " + this.characteristics + "\n" +
-                " Extinction: " + extinct + " Water Bird: " + waterBird + "\n" +
-                " Number of Wings: " + "\n" +
-                " Preferred Food: " + this.preferredFood + "\n";
-
-        return desc;
+        return super.toString();
     }
 }

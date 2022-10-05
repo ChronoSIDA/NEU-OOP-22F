@@ -1,4 +1,4 @@
-public enum BIRDTYPE {
+public enum Birdtype {
     HAWKS, EAGLES, OSPREY, //Birds of Prey
 
     EMUS, KIWIS, MOAS,

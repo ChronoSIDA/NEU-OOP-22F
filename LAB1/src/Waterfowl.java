@@ -1,53 +1,31 @@
 import java.util.ArrayList;
 
-public class Waterfowl extends AbstractBirds{
-  private boolean waterBird;
-  private ArrayList<WATERBODY> waterBody;
+public class Waterfowl extends AbstractWaterBirds{
 
-  public Waterfowl(String birdName, BIRDTYPE birdType,  boolean extinct, int numWings, ArrayList<FEED> preferredFood, boolean waterBird) {
-    super(birdName, birdType, extinct, numWings, preferredFood, waterBird);
+
+  public Waterfowl(String birdName, Birdtype birdType, boolean extinct, int numWings, ArrayList<Feed> preferredFood, ArrayList<BodyOfWater> bodyOfWaterArrayList) {
+    super(birdName, birdType, extinct, numWings, preferredFood, bodyOfWaterArrayList);
     characteristics = new ArrayList<>();
     characteristics.add("Waterfowls live near water sources.");
 
-    for(WATERBODY water: waterBody){
-      if (water != WATERBODY.FRESH && water != WATERBODY.SALT){
+    for(BodyOfWater water: bodyOfWaterArrayList){
+      if (water != BodyOfWater.FRESH && water != BodyOfWater.SALT){
         throw new IllegalArgumentException("Waterfowls be in either fresh or salt water sources");
       }
     }
 
-    if(birdType != BIRDTYPE.DUCKS || birdType != BIRDTYPE.SWANS || birdType != BIRDTYPE.GEESE){
+    if(birdType != Birdtype.DUCKS || birdType != Birdtype.SWANS || birdType != Birdtype.GEESE){
       throw new IllegalArgumentException("Waterfowls include ducks, swans, and geese.");
     }
   }
 
   @Override
-  public CLASSIFICATIONS getBirdsClass() {
-    return CLASSIFICATIONS.SHOREBIRDS;
+  public Classification getBirdsClass() {
+    return Classification.SHOREBIRDS;
   }
 
   @Override
   public String toString() {
-    String desc;
-    String extinct, waterBird;
-    if (isExtinct()){
-      extinct = "Yes ";
-    } else {
-      extinct = "No ";
-    }
-
-    if(isWaterBird()){
-      waterBird = "Yes";
-    } else {
-      waterBird = "No";
-    }
-
-
-    desc = "Bird Name:" + this.birdName + " Bird Type: " + this.birdType + "\n" +
-            " Characteristics: " + this.characteristics + "\n" +
-            " Extinction: " + extinct + " Water Bird: " + waterBird + "\n" +
-            " Number of Wings: " + "\n" +
-            " Preferred Food: " + this.preferredFood + "\n";
-
-    return desc;
+    return super.toString();
   }
 }

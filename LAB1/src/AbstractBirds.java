@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public abstract class AbstractBirds implements Birds{
     protected String birdName;
 
-    protected BIRDTYPE birdType;
+    protected Birdtype birdType;
 
     protected ArrayList<String> characteristics;
 
@@ -11,12 +11,11 @@ public abstract class AbstractBirds implements Birds{
 
     protected int numWings;
 
-    protected ArrayList<FEED> preferredFood;
+    protected ArrayList<Feed> preferredFood;
 
-    protected boolean waterBird;
-    protected CLASSIFICATIONS classifications = CLASSIFICATIONS.PIGEONS;
 
-    public AbstractBirds(String birdName, BIRDTYPE birdType, boolean extinct, int numWings, ArrayList<FEED> preferredFood, boolean waterBird){
+
+    public AbstractBirds(String birdName, Birdtype birdType, boolean extinct, int numWings, ArrayList<Feed> preferredFood){
         if (preferredFood.size() < 2 || preferredFood.size() > 4){
             throw new IllegalArgumentException("Birds' preferred food should in range of 2 to 4 items");
         }
@@ -39,7 +38,7 @@ public abstract class AbstractBirds implements Birds{
         return birdName;
     }
 
-    public BIRDTYPE getBirdType() {
+    public Birdtype getBirdType() {
         return birdType;
     }
 
@@ -55,19 +54,17 @@ public abstract class AbstractBirds implements Birds{
         return numWings;
     }
 
-    public ArrayList<FEED> getPreferredFood() {
+    public ArrayList<Feed> getPreferredFood() {
         return preferredFood;
     }
 
-    public abstract CLASSIFICATIONS getBirdsClass();
-
-    public boolean isWaterBird(){return waterBird; }
+    public abstract Classification getBirdsClass();
 
     public void setBirdName(String birdName) {
         this.birdName = birdName;
     }
 
-    public void setBirdType(BIRDTYPE birdType) {
+    public void setBirdType(Birdtype birdType) {
         this.birdType = birdType;
     }
 
@@ -83,11 +80,25 @@ public abstract class AbstractBirds implements Birds{
         this.numWings = numWings;
     }
 
-    public void setPreferredFood(ArrayList<FEED> preferredFood) {
+    public void setPreferredFood(ArrayList<Feed> preferredFood) {
         this.preferredFood = preferredFood;
     }
 
-    public void setWaterBird(boolean waterBird) {
-        this.waterBird = waterBird;
+    @Override
+    public String toString() {
+        String desc;
+        String extinct;
+        if (isExtinct()){
+            extinct = "Yes ";
+        } else {
+            extinct = "No ";
+        }
+        desc = "Bird Name:" + this.birdName + " Bird Type: " + this.birdType + "\n" +
+                " Characteristics: " + this.characteristics + "\n" +
+                " Extinction: " + extinct + "\n" +
+                " Number of Wings: " + "\n" +
+                " Preferred Food: " + this.preferredFood + "\n";
+
+        return desc;
     }
 }

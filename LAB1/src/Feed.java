@@ -1,4 +1,4 @@
-public enum FEED {
+public enum Feed {
 
     // this enum is a food category
 

@@ -1,6 +1,4 @@
-import javax.print.attribute.standard.MediaSize;
-
-public enum CLASSIFICATIONS {
+public enum Classification {
     BIRDS_OF_PREY,
     FLIGHTLESS,
     OWLS,

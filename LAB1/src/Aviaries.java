@@ -12,6 +12,16 @@ public class Aviaries implements Aviary {
     ListOfBirds = new ArrayList<>();
     this.aviaryLocation = aviaryLocation;//only initialize the location of aviary with the constructor
   }
+
+  @Override
+  public String getListofBirdByName() {
+    String s = "";
+    for(Birds birds: ListOfBirds){
+      s += birds.getBirdName();
+    }
+    return s;
+  }
+
   public Birds getBird(){//return the first bird in the Birdlist
     return ListOfBirds.get(0);
   }

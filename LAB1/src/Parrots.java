@@ -4,8 +4,8 @@ public class Parrots extends AbstractBirds{
     private int numOfWords;
     private String favoritePhrase;
 
-    public Parrots(String birdName, BIRDTYPE birdType, int numOfWords, String favoritePhrase, boolean extinct, int numWings, ArrayList<FEED> preferredFood, boolean waterBird) {
-        super(birdName, birdType, extinct, numWings, preferredFood, waterBird);
+    public Parrots(String birdName, Birdtype birdType, int numOfWords, String favoritePhrase, boolean extinct, int numWings, ArrayList<Feed> preferredFood) {
+        super(birdName, birdType, extinct, numWings, preferredFood);
         characteristics = new ArrayList<>();
         characteristics.add("Short, curved beak and are known for their intelligence and ability to mimic sounds.");
 
@@ -14,7 +14,7 @@ public class Parrots extends AbstractBirds{
         }
         this.numOfWords = numOfWords;
         this.favoritePhrase = favoritePhrase;
-        if(birdType != BIRDTYPE.ROSE_RING_PARAKEET && birdType != BIRDTYPE.GRAY_PARROT && birdType != BIRDTYPE.SULFUR_CRESTED_COCKATOO){
+        if(birdType != Birdtype.ROSE_RING_PARAKEET && birdType != Birdtype.GRAY_PARROT && birdType != Birdtype.SULFUR_CRESTED_COCKATOO){
             throw new IllegalArgumentException("Parrots include Rose-Ring Parakeet, Gray Parrot, and Sulfur-crested cockatoo.");
         }
     }
@@ -28,25 +28,12 @@ public class Parrots extends AbstractBirds{
     }
 
     @Override
-    public CLASSIFICATIONS getBirdsClass() {
-        return CLASSIFICATIONS.PARROTS;
+    public Classification getBirdsClass() {
+        return Classification.PARROTS;
     }
 
     @Override
     public String toString() {
-        String desc;
-        String extinct;
-        if (isExtinct()){
-            extinct = "Yes ";
-        } else {
-            extinct = "No ";
-        }
-        desc = "Bird Name:" +  this.birdName + " Bird Type: " + this.birdType + "\n" +
-                " Characteristics: " + this.characteristics + "\n" +
-                " Extinction: " + extinct + "Number of Wings: " + "\n" +
-                " Preferred Food: " + this.preferredFood + "\n" +
-                " Number of Words: " + this.numOfWords + " Favorite Phrase: " + this.favoritePhrase + "\n";
-
-        return desc;
+        return super.toString()+"Waterbird: no";
     }
 }

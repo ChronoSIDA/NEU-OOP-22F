@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public interface Birds {
     // Get the type of the bird
-    BIRDTYPE getBirdType();
+    Birdtype getBirdType();
     String getBirdName();
     // Get defining characteristic
     ArrayList<String> getCharacteristics();
@@ -11,7 +11,6 @@ public interface Birds {
     // Get the number of wings
     int getNumWings();
     // 2-4 items bird prefer to eat
-    ArrayList<FEED> getPreferredFood();
-    CLASSIFICATIONS getBirdsClass();
-    boolean isWaterBird();
+    ArrayList<Feed> getPreferredFood();
+    Classification getBirdsClass();
 }

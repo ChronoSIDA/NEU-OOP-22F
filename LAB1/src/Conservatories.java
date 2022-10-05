@@ -8,7 +8,7 @@ public class Conservatories implements Conservatory{
   //private HashMap<Location, Aviary> Location_Aviary;
 
   //map the food to its quantity
-  private HashMap<FEED, Integer> Food_Quantity;
+  private HashMap<Feed, Integer> Food_Quantity;
 
 
   //Store the list of aviaries in the conservatory
@@ -19,7 +19,7 @@ public class Conservatories implements Conservatory{
 
 
   public Conservatories(){
-    for (FEED food: FEED.values()){
+    for (Feed food: Feed.values()){
       Food_Quantity.put(food, 0);//initialize the Food quantity
     }
     //Location_Aviary = new HashMap<>();
@@ -72,8 +72,8 @@ public class Conservatories implements Conservatory{
             break;
           }
         }
-        if (birds.isWaterBird()) {
-          if (aviary.getBird().isWaterBird()) {
+        if (true) {
+          if (true) {
             aviary.addBird(birds);
             Bird_Aviary.put(birds, aviary);//put the aviary and the bird into the map
             flag = 1;
@@ -87,7 +87,7 @@ public class Conservatories implements Conservatory{
       throw new RuntimeException("No aviary is available for this bird");
     }
 
-    for(FEED feed: birds.getPreferredFood()){
+    for(Feed feed: birds.getPreferredFood()){
       Food_Quantity.put(feed, Food_Quantity.get(feed) + 1);//Since we add a new bird, increase the quantity of its favorite food
     }
   }
@@ -97,7 +97,7 @@ public class Conservatories implements Conservatory{
   public void calculateFood() {
     System.out.println("Quantity of Food");
     System.out.println("Food-----Quantity");
-    for (FEED feed: Food_Quantity.keySet()){
+    for (Feed feed: Food_Quantity.keySet()){
       System.out.println(feed + "-----" + Food_Quantity.get(feed));
     }
 
@@ -116,7 +116,8 @@ public class Conservatories implements Conservatory{
   @Override
   public void printMap() {
     for (Aviary aviary: aviaryArrayList){
-      System.out.println(aviary);
+      System.out.println("The aviary at" + aviary.getLocation() + "\n" + "All the birds that it houses:\n" + aviary.getListofBirdByName());
+      System.out.println("\n\n");
     }
   }
 
