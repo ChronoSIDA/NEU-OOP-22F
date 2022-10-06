@@ -16,7 +16,7 @@ public class DriverTest {
     private FlightLess flightLess;
     private Pigeons pigeon2;
     private Pigeons pigeon3;
-    
+
     // test birds
     private BirdsOfPrey eagle;
     private FlightLess moas;

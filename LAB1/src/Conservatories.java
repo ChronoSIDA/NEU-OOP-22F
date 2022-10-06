@@ -74,8 +74,8 @@ public class Conservatories implements Conservatory{
             break;
           }
         }
-        if (true) {
-          if (true) {
+        if (birds instanceof Waterfowl) {
+          if (aviary.getBird()instanceof Waterfowl) {
             aviary.addBird(birds);
             Bird_Aviary.put(birds, aviary);//put the aviary and the bird into the map
             flag = 1;
@@ -126,14 +126,13 @@ public class Conservatories implements Conservatory{
   @Override
   public void printIndex() {
     Object[] objects = Bird_Aviary.keySet().toArray();
-    Arrays.sort(Bird_Aviary.keySet().toArray(), new Comparator<Object>() {
+    Arrays.sort(objects, new Comparator() {
       @Override
       public int compare(Object o1, Object o2) {
         if(o1 instanceof Birds && o2 instanceof Birds){
           Birds b1 = (Birds) o1;
           Birds b2 = (Birds) o2;
           return b1.getBirdName().compareTo(b2.getBirdName());
-
         }
         throw new RuntimeException("Class exception");
       }
