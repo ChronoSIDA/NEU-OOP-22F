@@ -1,3 +1,7 @@
+import java.util.IllegalFormatCodePointException;
+
+import javax.print.attribute.standard.MediaSize;
+
 public enum Feed {
 
     // this enum is a food category

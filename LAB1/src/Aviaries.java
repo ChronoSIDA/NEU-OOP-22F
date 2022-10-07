@@ -14,6 +14,11 @@ public class Aviaries implements Aviary {
   }
 
   @Override
+  public ArrayList<Birds> getBirdArray() {
+    return ListOfBirds;
+  }
+
+  @Override
   public String getListofBirdByName() {
     String s = "";
     for(Birds birds: ListOfBirds){
@@ -25,6 +30,7 @@ public class Aviaries implements Aviary {
   public Birds getBird(){//return the first bird in the Birdlist
     return ListOfBirds.get(0);
   }
+
 
   @Override
   public int getSize() {//return the number of birds in the current aviary
