@@ -10,9 +10,9 @@ public class DriverTest {
 
     private Conservatories conservatoryTwo;
 
+    private Conservatories conservatoryEmpire;
 
 
-    private Feed[] feedList;
     private Pigeons pigeon1;
     private FlightLess flightLess;
     private Pigeons pigeon2;
@@ -33,6 +33,7 @@ public class DriverTest {
     public void setUpEnvironment() throws Exception {
         conservatoryOne = new Conservatories();
         conservatoryTwo = new Conservatories();
+        conservatoryEmpire = new Conservatories();
 
         ArrayList<Feed> foods = new ArrayList<>();
         foods.add(Feed.FISH);
@@ -42,7 +43,6 @@ public class DriverTest {
 
         // Test IllegalArgumentException on extinction
         pigeon1 = new Pigeons("Real Pigeon", Birdtype.PIGEONS, false, 2, foods);
-
         flightLess = new FlightLess("KiwisKK",Birdtype.KIWIS, false, 0, foods);
         pigeon2 = new Pigeons("Pigeon Alive", Birdtype.PIGEONS, false, 2, foods);
         pigeon3 = new Pigeons("The Only Dove", Birdtype.DOVES, false, 2, foods);
@@ -54,13 +54,6 @@ public class DriverTest {
         conservatoryOne.addBird(pigeon2);
         conservatoryOne.addBird(pigeon3);
 
-
-
-        feedList = new Feed[]{Feed.FISH,  Feed.BERRIES,
-                Feed.SEEDS, Feed.FRUIT, Feed.INSECTS, Feed.BIRDS,
-                Feed.EGGS, Feed.SMALL_MAMMALS, Feed.FISH, Feed.BUDS,
-                Feed.LARVAE, Feed.AQUATIC_INVERTEBRATES,
-                Feed.NUTS, Feed.VEGETATION};
 
         ArrayList<Feed> foodEagle = new ArrayList<>();
         foodEagle.add(Feed.FISH);
@@ -133,13 +126,27 @@ public class DriverTest {
 
     @Test
     public void testGetAviaryOfBird(){
+        System.out.println("Test whether the bird is in the correct location: \n");
+
+        System.out.println("Eagle location verified");
         Assert.assertEquals(Location.L3, conservatoryOne.getAviary(eagle));
+        System.out.println("Moas location verified");
         Assert.assertEquals(Location.L2, conservatoryOne.getAviary(moas));
+        System.out.println("Owl location verified");
         Assert.assertEquals(Location.L1, conservatoryOne.getAviary(owl));
+        System.out.println("Parrot location verified");
         Assert.assertEquals(Location.L1, conservatoryOne.getAviary(parrot));
-        Assert.assertEquals(Location.L4, conservatoryOne.getAviary(pigeon));
-        Assert.assertEquals(Location.L4, conservatoryOne.getAviary(hornedPuffin));
-        Assert.assertEquals(Location.L5, conservatoryOne.getAviary(goose));
+        System.out.println("Pigeon location verified");
+        Assert.assertEquals(Location.L2, conservatoryOne.getAviary(pigeon));
+        System.out.println("Horned Puffin location verified");
+        Assert.assertEquals(Location.L2, conservatoryOne.getAviary(hornedPuffin));
+        System.out.println("Goose location verified");
+        Assert.assertEquals(Location.L4, conservatoryOne.getAviary(goose));
+
+        System.out.println("\n(Wrong location provided)");
+        System.out.println("Horned Puffin location failed");
+        Assert.assertEquals(Location.L5, conservatoryOne.getAviary(hornedPuffin));
+
     }
 
     @Test
@@ -152,8 +159,17 @@ public class DriverTest {
 
     }
     @Test
-    public void printMap() {
+    public void printMapOne() {
+        System.out.println("-----------------------------------------------------");
+        System.out.println("----------------- Conservatory  One -----------------");
         conservatoryOne.printMap();
+        System.out.println("-----------------------------------------------------");
+    }
+    public void printMapEmpire() {
+        System.out.println("-----------------------------------------------------");
+        System.out.println("-----------------Conservatory Empire-----------------");
+        conservatoryEmpire.printMap();
+        System.out.println("-----------------------------------------------------");
     }
 
     @Test
@@ -169,21 +185,24 @@ public class DriverTest {
 
         Birds extinctBird = new Pigeons("Pigeon the killer",Birdtype.EXTINCT_PIGEONS, true,2, foods);
 
+        System.out.println("Test: Trying to add extincted pigeon into the conservatory");
         conservatoryTwo.addBird(extinctBird);
-        Assert.assertEquals(new ArrayList<Aviary>(), conservatoryTwo.getAviaryList());
 
     }
     @Test
-    public void addTwentyMoreBird(){
-        for(int i = 0; i < 20; i++){
-
+    public void addHundredBirds(){
+        String birdName = "";
+        System.out.println("-----------------------------------------------------");
+        System.out.println("Added 100 birds to the Birds Empire.");
+        for(Integer i = 0; i < 100; i++){
             ArrayList<Feed> foods = new ArrayList<>();
             foods.add(Feed.SMALL_MAMMALS);
             foods.add(Feed.FISH);
-
-            conservatoryTwo.addBird(new Pigeons("Birds Empire", Birdtype.PIGEONS,false,2, foods));
+            birdName = "The Birds Empire " + i;
+            Birds tempBird = new Pigeons(birdName, Birdtype.PIGEONS, false,2, foods);
+            conservatoryEmpire.addBird(tempBird);
         }
-        System.out.println("Added 20 birds to conservatory Two.");
+        printMapEmpire();
     }
 
     @Test
@@ -195,7 +214,6 @@ public class DriverTest {
         Birds manyWingsBird = new Pigeons("Pigeon the killer",Birdtype.EXTINCT_PIGEONS, true,100, foods);
 
         conservatoryTwo.addBird(manyWingsBird);
-        Assert.assertEquals(new ArrayList<Aviary>(), conservatoryTwo.getAviaryList());
     }
 
     @Test
@@ -227,24 +245,29 @@ public class DriverTest {
 
         conservatoryTwo.addBird(fakeWaterFowl);
         Assert.assertEquals(new ArrayList<Aviary>(), conservatoryTwo.getAviaryList());
-
     }
 
     @Test
-    public void testTypeGrayParrot(){
+    public void testTypeRoseRingParakeet(){
         for(Aviary aviary: conservatoryOne.getAviaryList()){
             for(Birds birds: aviary.getBirdArray()){
                 if(birds instanceof Parrots){
+                    System.out.println("Type Check:  ROSE_RING_PARAKEET Rose Ring Parakeet is in the Conservatory \n" +
+                            "but given bird (Gray Parrot) is not in the Conservatory");
+                    System.out.println("Status: Failed");
                     Assert.assertEquals(birds.getBirdType(), Birdtype.GRAY_PARROT);
                 }
             }
         }
     }
     @Test
-    public void testTypeAfricanJacana(){
+    public void testTypeGreatAuk(){
         for(Aviary aviary: conservatoryOne.getAviaryList()){
             for(Birds birds: aviary.getBirdArray()){
                 if(birds instanceof Shorebirds){
+                    System.out.println("Type Check:  Great Auk is in the Conservatory \n" +
+                                    "but given bird (African Jacana) is not in the Conservatory");
+                    System.out.println("Status: Failed");
                     Assert.assertEquals(birds.getBirdType(), Birdtype.AFRICAN_JACANA);
                 }
             }
@@ -254,8 +277,9 @@ public class DriverTest {
     public void testClassificationParrots(){
         ArrayList<Feed> foodParrot = new ArrayList<>(Arrays.asList(Feed.BERRIES,Feed.BIRDS));
         Birds birds = new Parrots("Little bird", Birdtype.ROSE_RING_PARAKEET, 2,"I love you", false, 2, foodParrot);
+        System.out.println("Type Check Test if the given bird type is a Parrot");
+        System.out.println("Status: Succeeded");
         Assert.assertEquals(Classification.PARROTS, birds.getBirdsClass());
-
     }
 
 }

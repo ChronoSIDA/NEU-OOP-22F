@@ -64,23 +64,25 @@ public class Conservatories implements Conservatory{
             flag = 1;
             break;
           }
-
-        }
-        if (birds instanceof FlightLess) {
+        } else if (birds instanceof FlightLess) {
           if (aviary.getBird() instanceof FlightLess) {
             aviary.addBird(birds);
             Bird_Aviary.put(birds, aviary);//put the aviary and the bird into the map
             flag = 1;
             break;
           }
-        }
-        if (birds instanceof Waterfowl) {
+        } else if (birds instanceof Waterfowl) {
           if (aviary.getBird()instanceof Waterfowl) {
             aviary.addBird(birds);
             Bird_Aviary.put(birds, aviary);//put the aviary and the bird into the map
             flag = 1;
             break;
           }
+        } else {
+          aviary.addBird(birds);
+          Bird_Aviary.put(birds, aviary);//put the aviary and the bird into the map
+          flag = 1;
+          break;
         }
       }
     }

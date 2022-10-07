@@ -1,8 +1,0 @@
-public enum WATER {
-    WETLANDS,
-    FRESHWATER_SHORELANDS,
-    SALTWATER_SHORELANDS,
-    OCEAN,
-    FRESH,
-    SALT,
-}

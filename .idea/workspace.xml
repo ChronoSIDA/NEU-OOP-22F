@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7948e5fc-f9e6-4264-b3f9-810baf5dce05" name="Changes" comment="printIndex() modified, now the bird name can be printed in the alphabetical order.">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_10_5__17_01__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_10_5__17_01__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_9_28__21_23__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_9_28__21_23__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_9_30__11_41__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_9_30__11_41__Changes_.xml" afterDir="false" />
+    <list default="true" id="7948e5fc-f9e6-4264-b3f9-810baf5dce05" name="Changes" comment="added new test cases">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LAB1/src/Aviaries.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB1/src/Aviaries.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LAB1/src/Conservatories.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB1/src/Conservatories.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LAB1/test/DriverTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB1/test/DriverTest.java" afterDir="false" />
     </list>
@@ -52,6 +47,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
@@ -79,6 +77,16 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="DriverTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DriverTest.addTwentyMoreBird" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="NEUOOP22F" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DriverTest" />
+      <option name="METHOD_NAME" value="addTwentyMoreBird" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -113,23 +121,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PersonTest.testFirst" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="NEUOOP22F" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PersonTest" />
-      <option name="METHOD_NAME" value="testFirst" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.DriverTest" />
+        <item itemvalue="JUnit.DriverTest.addTwentyMoreBird" />
         <item itemvalue="JUnit.DriverTest.testClassification_Parrots" />
         <item itemvalue="JUnit.DriverTest.testType_AFRICAN_JACANA" />
         <item itemvalue="JUnit.DriverTest.testType_GRAY_PARROT" />
-        <item itemvalue="JUnit.PersonTest.testFirst" />
       </list>
     </recent_temporary>
   </component>
@@ -154,6 +152,7 @@
       <workItem from="1664988233204" duration="8194000" />
       <workItem from="1665098301409" duration="3767000" />
       <workItem from="1665102537106" duration="5301000" />
+      <workItem from="1665169751545" duration="2258000" />
     </task>
     <task id="LOCAL-00001" summary="Initialize Git">
       <created>1663869824911</created>
@@ -211,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665016952363</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added new test cases">
+      <created>1665169781218</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1665169781218</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,7 +266,8 @@
     <MESSAGE value="conservatories added" />
     <MESSAGE value="Initial version of the whole lab" />
     <MESSAGE value="printIndex() modified, now the bird name can be printed in the alphabetical order." />
-    <option name="LAST_COMMIT_MESSAGE" value="printIndex() modified, now the bird name can be printed in the alphabetical order." />
+    <MESSAGE value="added new test cases" />
+    <option name="LAST_COMMIT_MESSAGE" value="added new test cases" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -270,15 +277,6 @@
           <line>4</line>
           <properties field="characteristic" class="AbstractBirds" />
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/LAB1/src/Conservatories.java</url>
-          <line>129</line>
-          <properties method="compare">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
