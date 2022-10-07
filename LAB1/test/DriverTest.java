@@ -5,8 +5,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static junit.framework.TestCase.assertEquals;
-
 public class DriverTest {
     private Conservatories conservatoryOne;
 
@@ -32,19 +30,13 @@ public class DriverTest {
 
 
     @Before
-    public void setUp() throws Exception {
+    public void setUpEnvironment() throws Exception {
         conservatoryOne = new Conservatories();
         conservatoryTwo = new Conservatories();
 
-
-        feedList = new Feed[]{Feed.FISH,  Feed.BERRIES,
-                Feed.SEEDS, Feed.FRUIT, Feed.INSECTS, Feed.BIRDS,
-                Feed.EGGS, Feed.SMALL_MAMMALS, Feed.FISH, Feed.BUDS,
-                Feed.LARVAE, Feed.AQUATIC_INVERTEBRATES,
-                Feed.NUTS, Feed.VEGETATION};
         ArrayList<Feed> foods = new ArrayList<>();
-        foods.add(feedList[1]);
-        foods.add(feedList[2]);
+        foods.add(Feed.FISH);
+        foods.add(Feed.BERRIES);
 
 //        pigeon1 = new Pigeons("d", Birdtype.EXTINCT_PIGEONS, false, 2, foods);
 
@@ -112,7 +104,8 @@ public class DriverTest {
         eagle = new BirdsOfPrey("American Eagle", Birdtype.EAGLES,false, 2, foodEagle);
         moas = new FlightLess("China Moas",Birdtype.MOAS,false, 2, foodMoas);
         owl = new Owls("Owlllllllls", Birdtype.OWLS, false, 2, foodOwl);
-        parrot = new Parrots("Im Rose One", Birdtype.GRAY_PARROT, 10,"Hello",false, 2, foodParrot);
+        parrot = new Parrots("Im Rose One", Birdtype.ROSE_RING_PARAKEET, 10,"Hello",false, 2, foodParrot);
+        parrot = new Parrots("Im Rose Two", Birdtype.ROSE_RING_PARAKEET, 10,"World",false, 2, foodParrot);
 
         pigeon = new Pigeons("Pigeon the killer", Birdtype.PIGEONS, false,2, foodPigeon);
         hornedPuffin = new Shorebirds("Auk the Hulk",Birdtype.GREAT_AUK, false,2, foodShoreBird,new ArrayList<BodyOfWater>(
@@ -140,13 +133,13 @@ public class DriverTest {
 
     @Test
     public void testGetAviaryOfBird(){
-        Assert.assertEquals(Location.L5, conservatoryOne.getAviary(eagle));
+        Assert.assertEquals(Location.L3, conservatoryOne.getAviary(eagle));
         Assert.assertEquals(Location.L2, conservatoryOne.getAviary(moas));
-        Assert.assertEquals(Location.L6, conservatoryOne.getAviary(owl));
-        Assert.assertEquals(Location.L7, conservatoryOne.getAviary(parrot));
-        Assert.assertEquals(Location.L8, conservatoryOne.getAviary(pigeon));
-        Assert.assertEquals(Location.L9, conservatoryOne.getAviary(hornedPuffin));
-        Assert.assertEquals(Location.L10, conservatoryOne.getAviary(goose));
+        Assert.assertEquals(Location.L1, conservatoryOne.getAviary(owl));
+        Assert.assertEquals(Location.L1, conservatoryOne.getAviary(parrot));
+        Assert.assertEquals(Location.L4, conservatoryOne.getAviary(pigeon));
+        Assert.assertEquals(Location.L4, conservatoryOne.getAviary(hornedPuffin));
+        Assert.assertEquals(Location.L5, conservatoryOne.getAviary(goose));
     }
 
     @Test
@@ -177,19 +170,20 @@ public class DriverTest {
         Birds extinctBird = new Pigeons("Pigeon the killer",Birdtype.EXTINCT_PIGEONS, true,2, foods);
 
         conservatoryTwo.addBird(extinctBird);
-
+        Assert.assertEquals(new ArrayList<Aviary>(), conservatoryTwo.getAviaryList());
 
     }
     @Test
     public void addTwentyMoreBird(){
-        for(int i = 0; i < 5; i++){
+        for(int i = 0; i < 20; i++){
 
             ArrayList<Feed> foods = new ArrayList<>();
             foods.add(Feed.SMALL_MAMMALS);
             foods.add(Feed.FISH);
 
-            conservatoryTwo.addBird(new Pigeons("b", Birdtype.PIGEONS,false,2, foods));
+            conservatoryTwo.addBird(new Pigeons("Birds Empire", Birdtype.PIGEONS,false,2, foods));
         }
+        System.out.println("Added 20 birds to conservatory Two.");
     }
 
     @Test
@@ -198,36 +192,69 @@ public class DriverTest {
         foods.add(Feed.SMALL_MAMMALS);
         foods.add(Feed.FISH);
 
-        Birds manyWingsBird = new Pigeons("Pigeon the killer",Birdtype.EXTINCT_PIGEONS, false,100, foods);
+        Birds manyWingsBird = new Pigeons("Pigeon the killer",Birdtype.EXTINCT_PIGEONS, true,100, foods);
 
         conservatoryTwo.addBird(manyWingsBird);
+        Assert.assertEquals(new ArrayList<Aviary>(), conservatoryTwo.getAviaryList());
     }
 
     @Test
-    public void testType_GRAY_PARROT(){
+    public void outOfFoodRangeTest(){
+        ArrayList<Feed> foods = new ArrayList<>();
+        foods.add(Feed.SMALL_MAMMALS);
+        foods.add(Feed.FISH);
+        foods.add(Feed.BIRDS);
+        foods.add(Feed.INSECTS);
+        foods.add(Feed.VEGETATION);
+        foods.add(Feed.AQUATIC_INVERTEBRATES);
+
+        Birds fatOwl = new Pigeons("Fat Boy Owl",Birdtype.OWLS, false,2, foods);
+
+        conservatoryTwo.addBird(fatOwl);
+        Assert.assertEquals(new ArrayList<Aviary>(), conservatoryTwo.getAviaryList());
+    }
+
+    @Test
+    public void validaWaterBirdsTest(){
+        ArrayList<Feed> foods = new ArrayList<>();
+        foods.add(Feed.SMALL_MAMMALS);
+        foods.add(Feed.FISH);
+        foods.add(Feed.BIRDS);
+
+
+        Birds fakeWaterFowl = new Waterfowl("I Cant Swim Bird", Birdtype.GRAY_PARROT, false,2, foods, new ArrayList<BodyOfWater>(
+                List.of(new BodyOfWater[]{BodyOfWater.WETLANDS})));
+
+        conservatoryTwo.addBird(fakeWaterFowl);
+        Assert.assertEquals(new ArrayList<Aviary>(), conservatoryTwo.getAviaryList());
+
+    }
+
+    @Test
+    public void testTypeGrayParrot(){
         for(Aviary aviary: conservatoryOne.getAviaryList()){
             for(Birds birds: aviary.getBirdArray()){
                 if(birds instanceof Parrots){
-                    assertEquals(birds.getBirdType(), Birdtype.GRAY_PARROT);
+                    Assert.assertEquals(birds.getBirdType(), Birdtype.GRAY_PARROT);
                 }
             }
         }
     }
     @Test
-    public void testType_AFRICAN_JACANA(){
+    public void testTypeAfricanJacana(){
         for(Aviary aviary: conservatoryOne.getAviaryList()){
             for(Birds birds: aviary.getBirdArray()){
                 if(birds instanceof Shorebirds){
-                    assertEquals(birds.getBirdType(), Birdtype.AFRICAN_JACANA);
+                    Assert.assertEquals(birds.getBirdType(), Birdtype.AFRICAN_JACANA);
                 }
             }
         }
     }
     @Test
-    public void testClassification_Parrots(){
+    public void testClassificationParrots(){
         ArrayList<Feed> foodParrot = new ArrayList<>(Arrays.asList(Feed.BERRIES,Feed.BIRDS));
         Birds birds = new Parrots("Little bird", Birdtype.ROSE_RING_PARAKEET, 2,"I love you", false, 2, foodParrot);
-        assertEquals(Classification.PARROTS, birds.getBirdsClass());
+        Assert.assertEquals(Classification.PARROTS, birds.getBirdsClass());
 
     }
 

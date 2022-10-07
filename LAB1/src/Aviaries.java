@@ -21,8 +21,12 @@ public class Aviaries implements Aviary {
   @Override
   public String getListofBirdByName() {
     String s = "";
-    for(Birds birds: ListOfBirds){
-      s += birds.getBirdName() + " | ";
+    if (ListOfBirds.size() == 0){
+      s += "No birds in the house";
+    } else {
+      for(Birds birds: ListOfBirds){
+        s += birds.getBirdName() + " | ";
+      }
     }
     return s;
   }

@@ -38,7 +38,7 @@ public class Conservatories implements Conservatory{
   @Override
   public void addBird(Birds birds) {
     if (birds.isExtinct()) {//this bird is already extinct, so we can not assign it to our conservatory.
-      throw new IllegalArgumentException("The bird is extinct");
+      throw new IllegalArgumentException("The Bird is a history already, forget it!");
     }
     //Before adding a new bird, check the type of the bird, and make sure
     // Flightless birds, birds of prey, and waterfowl should not be mixed with other bird types.
@@ -97,10 +97,9 @@ public class Conservatories implements Conservatory{
 
   @Override
   public void calculateFood() {
-    System.out.println("Quantity of Food");
-    System.out.println("Food-----Quantity");
+    System.out.println("Quantity of Food \t Food(Quantity)");
     for (Feed feed: Food_Quantity.keySet()){
-      System.out.println(feed + "-----" + Food_Quantity.get(feed));
+      System.out.println(feed + "(" + Food_Quantity.get(feed) + ")");
     }
 
   }
