@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/NEUOOP22F.iml" filepath="$PROJECT_DIR$/NEUOOP22F.iml" />
-      <module fileurl="file://$PROJECT_DIR$/temp1/temp1.iml" filepath="$PROJECT_DIR$/temp1/temp1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HW1/HW1.iml" filepath="$PROJECT_DIR$/HW1/HW1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LAB1/LAB1.iml" filepath="$PROJECT_DIR$/LAB1/LAB1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/NEUOOP22F.iml" filepath="$PROJECT_DIR$/.idea/NEUOOP22F.iml" />
     </modules>
   </component>
 </project>

@@ -97,7 +97,7 @@ public abstract class AbstractBirds implements Birds{
                 " Bird Type: " + this.birdType + "\n" +
                 " Characteristics: " + this.characteristics + "\n" +
                 " Extinction: " + extinct + "\n" +
-                " Number of Wings: " + "\n" +
+                " Number of Wings: " + this.numWings + "\n" +
                 " Preferred Food: " + this.preferredFood + "\n";
 
         return desc;
