@@ -47,11 +47,11 @@ public class Aviaries implements Aviary {
   }
 
   @Override
-  public Location getLocation() {
+  public  getLocation() {
     return this.aviaryLocation;
   }
 
-
+  Location
 
   @Override
   public String toString() {

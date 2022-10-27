@@ -115,15 +115,10 @@ public class DriverTest {
         conservatoryOne.addBird(hornedPuffin);
         conservatoryOne.addBird(goose);
     }
-
-
-
-
     @Test
     public void getFoodQuantity() {
         conservatoryOne.calculateFood();
     }
-
     @Test
     public void testGetAviaryOfBird(){
         System.out.println("Test whether the bird is in the correct location: \n");
@@ -148,7 +143,6 @@ public class DriverTest {
         Assert.assertEquals(Location.L5, conservatoryOne.getAviary(hornedPuffin));
 
     }
-
     @Test
     public void printSignOfAviary() {
         ArrayList<Aviary> aviaryListOne = conservatoryOne.getAviaryList();
@@ -157,7 +151,6 @@ public class DriverTest {
             conservatoryOne.printSign(aviary);
         }
     }
-
     @Test
     public void printMapOne() {
         System.out.println("-----------------------------------------------------");
@@ -171,7 +164,6 @@ public class DriverTest {
         conservatoryEmpire.printMap();
         System.out.println("-----------------------------------------------------");
     }
-
     @Test
     public void printBirdIndex() {
         conservatoryOne.printIndex();
@@ -204,7 +196,6 @@ public class DriverTest {
         }
         printMapEmpire();
     }
-
     @Test
     public void checkNumOfWings(){
         ArrayList<Feed> foods = new ArrayList<>();
@@ -215,7 +206,6 @@ public class DriverTest {
 
         conservatoryTwo.addBird(manyWingsBird);
     }
-
     @Test
     public void outOfFoodRangeTest(){
         ArrayList<Feed> foods = new ArrayList<>();
@@ -231,7 +221,6 @@ public class DriverTest {
         conservatoryTwo.addBird(fatOwl);
         Assert.assertEquals(new ArrayList<Aviary>(), conservatoryTwo.getAviaryList());
     }
-
     @Test
     public void validaWaterBirdsTest(){
         ArrayList<Feed> foods = new ArrayList<>();
@@ -246,7 +235,6 @@ public class DriverTest {
         conservatoryTwo.addBird(fakeWaterFowl);
         Assert.assertEquals(new ArrayList<Aviary>(), conservatoryTwo.getAviaryList());
     }
-
     @Test
     public void testTypeRoseRingParakeet(){
         for(Aviary aviary: conservatoryOne.getAviaryList()){

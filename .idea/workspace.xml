@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="797e6f8a-4f95-4099-a99a-7092c58052f8" name="Changes" comment="added test cases">
-      <change afterPath="$PROJECT_DIR$/LAB2/res/CharacterTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LAB2/res/GearTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LAB2/test/BattleTest.java" afterDir="false" />
+    <list default="true" id="797e6f8a-4f95-4099-a99a-7092c58052f8" name="Changes" comment="added footwear">
+      <change afterPath="$PROJECT_DIR$/LAB2/test/CharacterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LAB2/test/GearTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LAB2/LAB2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LAB2/LAB2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LAB2/src/FootWear.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB1/src/Aviaries.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB1/src/Aviaries.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB1/test/DriverTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB1/test/DriverTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,11 +45,13 @@
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
+    "last_opened_file_path": "C:/Users/sidaz/Desktop/5010/NEUOOP22F/LAB2/test",
     "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\sidaz\Desktop\5010\NEUOOP22F\LAB2\test" />
       <recent name="C:\Users\sidaz\Desktop\5010\NEUOOP22F\LAB2\src" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -101,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666907130228</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added footwear">
+      <created>1666907295920</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1666907295920</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,6 +129,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update" />
     <MESSAGE value="added test cases" />
-    <option name="LAST_COMMIT_MESSAGE" value="added test cases" />
+    <MESSAGE value="added footwear" />
+    <option name="LAST_COMMIT_MESSAGE" value="added footwear" />
   </component>
 </project>
