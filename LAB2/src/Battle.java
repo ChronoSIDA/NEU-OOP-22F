@@ -38,7 +38,7 @@ public class Battle implements BattleInterface{
                     gearList.remove(i);
                     return;
                 }
-            } else if (tmp instanceof Footwear) {
+            } else if (tmp instanceof FootWear) {
                 if (player.getFootWearList().size() < 2){
                     player.setGear(tmp);
                     gearList.remove(i);
