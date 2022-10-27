@@ -31,14 +31,14 @@ public class Battle implements BattleInterface{
 
         for (int i = 0; i < gearList.size(); i++) {
             Gear tmp = gearList.get(i);
-            GEAR_TYPE tmpType = tmp.getType();
-            if (tmpType == GEAR_TYPE.HEAD_GEAR){
+
+            if (tmp instanceof HeadGear){
                 if (player.getHeadGearList().size() < 1){
                     player.setGear(tmp);
                     gearList.remove(i);
                     return;
                 }
-            } else if (tmpType == GEAR_TYPE.FOOTWEAR) {
+            } else if (tmp instanceof Footwear) {
                 if (player.getFootWearList().size() < 2){
                     player.setGear(tmp);
                     gearList.remove(i);
@@ -55,9 +55,11 @@ public class Battle implements BattleInterface{
         }
         // if this character does not have any slots
         // Just assign the first gear since it's the one has most attack or defense
-        Gear firstGear = gearList.get(0);
-        player.setGear(firstGear);
-        gearList.remove(0);
+
+//        Gear firstGear = gearList.get(0);
+//        player.setGear(firstGear);
+//        gearList.remove(0);
+
     }
 
     @Override
