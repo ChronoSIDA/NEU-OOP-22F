@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class Battle implements BattleInterface{
     private Character player1;
@@ -11,12 +12,23 @@ public class Battle implements BattleInterface{
         this.player1 = ch1;
         this.player2 = ch2;
         this.gearList = gearList;
+        Collections.sort(gearList, new Comparator<Gear>() {
+            @Override
+            public int compare(Gear o1, Gear o2) {
+                if(o1.getGearAttackPoints() > o2.getGearAttackPoints()){
+                    return -1;
+                }else if(o2.getGearAttackPoints() < o2.getGearAttackPoints()){
+                    return 1;
+                }else {
+                    return -Integer.compare(o1.getGearDefensePoints(), o2.getGearDefensePoints());
+                }
+            }
+        });
     }
 
 
     private void assignGear(ArrayList<Gear> gearList, Character player){
-        Collections.sort(gearList);
-        Collections.reverse(gearList);
+
         for (int i = 0; i < gearList.size(); i++) {
             Gear tmp = gearList.get(i);
             GEAR_TYPE tmpType = tmp.getType();

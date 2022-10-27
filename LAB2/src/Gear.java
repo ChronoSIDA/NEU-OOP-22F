@@ -1,9 +1,9 @@
 public interface Gear extends Comparable<Gear> {
-    GearType getGearType();
+    //GearType getGearType();
     String getGearName();
     String getGearAdjective();
     String getGearNoun();
     Gear combineGear(Gear g);
-    int getGearAttackStrength();
-    int getGearDefenseStrength();
+    int getGearAttackPoints();
+    int getGearDefensePoints();
 }

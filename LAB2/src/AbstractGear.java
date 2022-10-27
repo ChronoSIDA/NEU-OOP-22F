@@ -1,10 +1,10 @@
 public abstract class AbstractGear implements Gear{
 
-    protected String gearName;
-    protected String gearAdjective;
-    protected String gearNoun;
-    protected final int attackStrength;
-    protected final int defenseStrength;
+     String gearName;
+     String gearAdjective;
+     String gearNoun;
+     final int attackStrength;
+     final int defenseStrength;
     public AbstractGear(String Adjective, String noun, int attackValue, int defenseValue) {
         if (Adjective.split(",").length != 1 || noun.split(",").length != 1) throw new IllegalArgumentException("There should be only one adjective and only one noun");
         if (attackValue < 0 || defenseValue < 0 ) throw new IllegalArgumentException("attackStrength or defense Strength should not < 0");
@@ -14,8 +14,8 @@ public abstract class AbstractGear implements Gear{
         this.defenseStrength = defenseValue;
         this.attackStrength = attackValue;
     }
-    @Override
-    public abstract GearType getGearType();
+//    @Override
+//    public abstract GearType getGearType();
 
     @Override
     public String getGearAdjective() {
@@ -32,43 +32,51 @@ public abstract class AbstractGear implements Gear{
         return this.gearName;
     }
 
-    protected abstract Gear combineInternal(String adj, String noun, int attack, int defense);
+    protected abstract Gear returnNewGear(String adj, String noun, int attack, int defense);
+
+    // check the type of thw gear
+    abstract boolean checkType(Gear o);
 
     @Override
     public Gear combineGear(Gear g) {
         // System.out.println(this.getName())
         //System.out.println(g.getName());
         // System.out.println(this.getType() + "" + g.getType());
-        if (this.getType() != g.getType()) throw new IllegalArgumentException("While combining the gear type should be the same");
+       // if (this.getType() != g.getType()) throw new IllegalArgumentException("While combining the gear type should be the same");
         // combine the name first then combine the attributes
-        String newNoun = this.gearAdjective + " " + this.gearNoun;
+        if(checkType(g) != true){
+            throw new IllegalArgumentException("Wrong gear type!");
+        }
+        String newAdj = this.getGearAdjective() + " " + g.getGearAdjective();
+        String newNoun = this.getGearNoun();
 
-        String newAdj = g.getAdjective();
+        //String newAdj = g.getAdjective();
 
         //System.out.println(newAdj + " " + newNoun);
-        int newAttack = this.attackStrength + g.getAttackStrength();
-        int newDefense = this.defenseStrength + g.getDefenseStrength();
-        return combineInternal(newAdj, newNoun, newAttack, newDefense);
+        int newAttack = this.getGearAttackPoints() + g.getGearAttackPoints();
+        int newDefense = this.getGearDefensePoints() + g.getGearDefensePoints();
+
+       return returnNewGear(newAdj, newNoun, newAttack, newDefense);
     }
 
     @Override
-    public int getGearAttackStrength() {
+    public int getGearAttackPoints() {
         return this.attackStrength;
     }
 
     @Override
-    public int getGearDefenseStrength() {
+    public int getGearDefensePoints() {
         return this.defenseStrength;
     }
 
     @Override
     public int compareTo(Gear o) {
-        if (this.getGearAttackStrength() < o.getGearDefenseStrength()){
+        if (this.getGearAttackPoints() < o.getGearDefensePoints()){
             return -1;
-        } else if(this.getGearAttackStrength() > o.getGearDefenseStrength()){
+        } else if(this.getGearAttackPoints() > o.getGearDefensePoints()){
             return 1;
         } else{
-            return Integer.compare(this.getDefenseStrength(), o.getDefenseStrength());
+            return Integer.compare(this.getGearDefensePoints(), o.getGearDefensePoints());
         }
     }
 }

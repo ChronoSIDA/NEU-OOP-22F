@@ -5,40 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="797e6f8a-4f95-4099-a99a-7092c58052f8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/NEUOOP22F.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/bird_zhang_liu.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HW2/src/transmission/Transmission.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HW2/test/transmission/AutomaticTransmissionTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HW3/src/questions/Likert.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HW3/src/questions/MultipleChoice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HW3/src/questions/MultipleSelect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HW3/src/questions/Question.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HW3/src/questions/QuestionType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HW3/src/questions/Questionnaire.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HW3/src/questions/TrueFalse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HW3/test/questions/QuestionnaireTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LAB1/LAB1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LAB2/src/AbstractGear.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LAB2/src/Battle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LAB2/src/BattleInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LAB2/src/Character.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LAB2/src/CharacterInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LAB2/src/Footwear.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LAB2/src/Gear.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LAB2/src/GearType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LAB2/src/HandGear.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LAB2/src/HeadGear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_10_5,_17_01_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_10_5__17_01__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_9_28,_21_23_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_9_28__21_23__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LAB1/src/AbstractBirds.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB1/src/AbstractBirds.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LAB1/test/DriverTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB1/test/DriverTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LAB1/test/ParrotsTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NEUOOP22F.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB2/src/AbstractGear.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB2/src/AbstractGear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB2/src/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB2/src/Battle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB2/src/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB2/src/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB2/src/Footwear.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB2/src/Footwear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB2/src/Gear.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB2/src/Gear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB2/src/HandGear.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB2/src/HandGear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB2/src/HeadGear.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB2/src/HeadGear.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,34 +38,23 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Frr59u5s76F8JK3ZycwAEQXR3Y" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
-    "last_directory_selection": "C:/Users/sidaz/Desktop/5010/NEUOOP22F/HW3/test/questions",
-    "last_opened_file_path": "C:/Users/sidaz/Desktop/5010/NEUOOP22F/LAB2/src",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\sidaz\Desktop\5010\NEUOOP22F\LAB2\src" />
@@ -126,6 +90,7 @@
       <workItem from="1665536585763" duration="602000" />
       <workItem from="1666036204254" duration="10077000" />
       <workItem from="1666201603276" duration="1509000" />
+      <workItem from="1666902354160" duration="1109000" />
     </task>
     <servers />
   </component>

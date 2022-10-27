@@ -11,21 +11,21 @@ public class Character implements CharacterInterface{
 
     private int attackPoint;
     private int defensePoint;
-    private final String name;
-    private final ArrayList<Gear> headGear;
+    private  String name = null;
+    private  ArrayList<Gear> headGear = null;
 
-    private final static int HEAD_CAP = 1;
+    private static int HEAD_CAP = 1;
 
     private final static int HAND_CAP = 2;
 
     private final static int FOOT_CAP = 2;
 
 
-    private final ArrayList<Gear> handGear;
-    private final ArrayList<Gear> footGear;
+    private  ArrayList<Gear> handGear = null;
+    private  ArrayList<Gear> footGear = null;
 
 
-    public CharacterImpl(int attackPoint, int defensePoint, String name) {
+    public Character(int attackPoint, int defensePoint, String name) {
         if (attackPoint < 0) throw new IllegalArgumentException("Attack point cannot be negative.");
         if (defensePoint < 0) throw new IllegalArgumentException("Defense point cannot be negative.");
         this.attackPoint = attackPoint;
@@ -79,43 +79,34 @@ public class Character implements CharacterInterface{
 //    }
     @Override
     public void setGear(Gear newGear) {
-        if (newGear.getType() == GEAR_TYPE.HEAD_GEAR) {
-            defensePoint += newGear.getDefenseStrength();
-            if (headGear.size() == CharacterImpl.HEAD_CAP) {
-                Gear tmpGear = this.headGear.get(0);
-                Gear gear = tmpGear.combine(newGear);
-                this.headGear.set(0, gear);
+        if (newGear instanceof HeadGear) {
+            defensePoint += newGear.getGearDefensePoints();
+            if (headGear.size() == Character.HEAD_CAP) {
+
+                headGear.set(Character.HEAD_CAP - 1, this.headGear.get(Character.HEAD_CAP - 1).combineGear(newGear));
             } else {
                 headGear.add(newGear);
             }
-        } else if (newGear.getType() == GEAR_TYPE.HAND_GEAR) {
-            attackPoint += newGear.getAttackStrength();
-            if (handGear.size() == CharacterImpl.HAND_CAP) {
-                Random random = new Random();
-                int randIndex = random.nextInt(2);
-                Gear tmpGear = this.handGear.get(randIndex);
-                Gear gear = tmpGear.combine(newGear);
-                this.handGear.set(randIndex, gear);
+        } else if (newGear instanceof HandGear) {
+            attackPoint += newGear.getGearAttackPoints();
+            if (this.handGear.size() == Character.HEAD_CAP) {
 
+                handGear.set(Character.HAND_CAP - 1, this.handGear.get(Character.HAND_CAP - 1).combineGear(newGear));
             } else {
                 handGear.add(newGear);
             }
-
-
         } else {
-            attackPoint += newGear.getAttackStrength();
-            defensePoint += newGear.getDefenseStrength();
-            if (footGear.size() == CharacterImpl.FOOT_CAP) {
-                Random random = new Random();
-                int randIndex = random.nextInt(2);
-                Gear tmpGear = this.footGear.get(randIndex);
-                Gear gear = tmpGear.combine(newGear);
-                this.footGear.set(randIndex, gear);
+            attackPoint += newGear.getGearAttackPoints();
+            defensePoint += newGear.getGearDefensePoints();
+            if (this.footGear.size() == Character.FOOT_CAP) {
+
+                footGear.set(Character.FOOT_CAP - 1, this.footGear.get(Character.FOOT_CAP - 1).combineGear(newGear));
             } else {
                 footGear.add(newGear);
             }
         }
     }
+
 
 
 
