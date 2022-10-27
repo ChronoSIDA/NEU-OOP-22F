@@ -38,8 +38,12 @@ public class Character implements CharacterInterface{
     }
 
 
+    @Override
+    public int calculateDamage(Character c) {
+        return -(this.getDefensePoint() - c.getAttackPoint());
+    }
 
-//    @Override
+    //    @Override
 //    public void setGear(Gear newGear) {
 //        if (newGear.getType() == GEAR_TYPE.HEAD_GEAR){
 //            defensePoint += newGear.getDefenseStrength();
@@ -143,21 +147,23 @@ public class Character implements CharacterInterface{
     }
 
 
-    @Override
-    public int compareTo(Character o) {
-        int thisRes = o.getAttackPoint() - defensePoint;
-        int otherRes = attackPoint - o.getDefensePoint();
-        if (thisRes < otherRes){
-            //System.out.println(name + " win!");
-            return 1;
-        } else if (thisRes > otherRes) {
-            //System.out.println(o.getName() + " win!");
-            return -1;
-        }else{
-            //System.out.println("There is a tie.");
-            return 0;
-        }
-    }
+
+
+//    @Override
+//    public int compareTo(Character o) {
+//        int thisRes = o.getAttackPoint() - defensePoint;
+//        int otherRes = attackPoint - o.getDefensePoint();
+//        if (thisRes < otherRes){
+//            //System.out.println(name + " win!");
+//            return 1;
+//        } else if (thisRes > otherRes) {
+//            //System.out.println(o.getName() + " win!");
+//            return -1;
+//        }else{
+//            //System.out.println("There is a tie.");
+//            return 0;
+//        }
+//    }
 
     @Override
     public String toString() {
@@ -168,4 +174,6 @@ public class Character implements CharacterInterface{
                 ", handGear=" + handGear +
                 ", footGear=" + footGear;
     }
+
+
 }

@@ -18,11 +18,11 @@ public class Footwear extends AbstractGear{
     }
 
 
-//    @Override
-//    public String toString() {
-//        return  "Type: " + this.getType() + " "+
-//                "name='" + name + '\'' +
-//                ", attackStrength=" + attackStrength +
-//                ", defenseStrength=" + defenseStrength;
-//    }
+    @Override
+    public String toString() {
+        return  "Type: Footwear"  + " "+
+                "name='" + getGearName() + '\'' +
+                ", attackStrength=" + getGearAttackPoints() +
+                ", defenseStrength=" + getGearDefensePoints();
+    }
 }

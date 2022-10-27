@@ -17,11 +17,11 @@ public class HandGear extends AbstractGear {
     }
 
 
-//    @Override
-//    public String toString() {
-//        return "Type: " + this.getType() + " "+
-//                "name='" + name + '\'' +
-//                ", attackStrength=" + attackStrength +
-//                ", defenseStrength=" + defenseStrength;
-//    }
+    @Override
+    public String toString() {
+        return  "Type: Handgear"  + " "+
+                "name='" + getGearName() + '\'' +
+                ", attackStrength=" + getGearAttackPoints() +
+                ", defenseStrength=" + getGearDefensePoints();
+    }
 }

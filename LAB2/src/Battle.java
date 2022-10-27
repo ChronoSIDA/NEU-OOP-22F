@@ -53,29 +53,28 @@ public class Battle implements BattleInterface{
                 }
             }
         }
-        // if this character does not have any slots
-        // Just assign the first gear since it's the one has most attack or defense
-
-//        Gear firstGear = gearList.get(0);
-//        player.setGear(firstGear);
-//        gearList.remove(0);
+        //If all slots on the character is full, nothing can be equipped after the loop, so we just add the fist element in the list.
+        Gear gear = gearList.get(0);
+        player.setGear(gear);
+        gearList.remove(0);
 
     }
 
     @Override
     public void start() {
         while (gearList.size() != 0){
-            this.assignGear(gearList, this.player1);
-            this.assignGear(gearList, this.player2);
+            assignGear(gearList, this.player1);
+            assignGear(gearList, this.player2);
             System.out.println(player1);
             System.out.println(player2);
+
         }
-        if (player1.compareTo(player2) > 0){
+        if(player1.calculateDamage(player2) < player2.calculateDamage(player1)){
             System.out.println(player1.getName() + " win!");
-        } else if (player1.compareTo(player2) < 0) {
+        }else if (player1.calculateDamage(player2) > player2.calculateDamage(player1)){
             System.out.println(player2.getName() + " win!");
-        } else{
-            System.out.println("There is a tie.");
+        }else{
+            System.out.println("there is a tie");
         }
 
     }
