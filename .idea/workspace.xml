@@ -4,12 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="797e6f8a-4f95-4099-a99a-7092c58052f8" name="Changes" comment="added footwear">
-      <change afterPath="$PROJECT_DIR$/LAB2/test/CharacterTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LAB2/test/GearTest.java" afterDir="false" />
+    <list default="true" id="797e6f8a-4f95-4099-a99a-7092c58052f8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/LAB2/src/FootWear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LAB1/src/Aviaries.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB1/src/Aviaries.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LAB1/test/DriverTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB1/test/DriverTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB1/LAB1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB1/src/AbstractBirds.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB1/src/AbstractWaterBirds.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB1/src/Aviaries.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB1/src/Aviary.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB1/src/Birds.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB1/src/BirdsOfPrey.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB1/src/Birdtype.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB1/src/BodyOfWater.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB1/src/Classification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB1/src/Conservatories.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB1/src/Conservatory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB1/src/Feed.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB1/src/FlightLess.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB1/src/Location.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB1/src/Owls.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB1/src/Parrots.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB1/src/Pigeons.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB1/src/Shorebirds.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB1/src/Waterfowl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB1/test/DriverTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB2/src/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB2/src/Battle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB2/src/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB2/src/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB2/src/Footwear.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB2/test/BattleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB2/test/BattleTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB2/test/CharacterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB2/test/CharacterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB2/test/GearTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB2/test/GearTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,16 +64,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "last_opened_file_path": "C:/Users/sidaz/Desktop/5010/NEUOOP22F/LAB2/test",
-    "node.js.selected.package.tslint": "(autodetect)"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\sidaz\Desktop\5010\NEUOOP22F\LAB2\test" />
@@ -72,6 +100,44 @@
       <recent name="questions" />
       <recent name="" />
     </key>
+  </component>
+  <component name="RunManager" selected="JUnit.BattleTest">
+    <configuration name="BattleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LAB2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BattleTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BattleTest.inValidGearListSizeConstruct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LAB2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BattleTest" />
+      <option name="METHOD_NAME" value="inValidGearListSizeConstruct" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BattleTest.start" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LAB2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BattleTest" />
+      <option name="METHOD_NAME" value="start" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.BattleTest" />
+        <item itemvalue="JUnit.BattleTest.inValidGearListSizeConstruct" />
+        <item itemvalue="JUnit.BattleTest.start" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -131,5 +197,21 @@
     <MESSAGE value="added test cases" />
     <MESSAGE value="added footwear" />
     <option name="LAST_COMMIT_MESSAGE" value="added footwear" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/LAB2/src/Battle.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/LAB2/src/Battle.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

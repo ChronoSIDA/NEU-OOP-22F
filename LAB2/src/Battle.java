@@ -15,13 +15,15 @@ public class Battle implements BattleInterface{
         Collections.sort(gearList, new Comparator<Gear>() {
             @Override
             public int compare(Gear o1, Gear o2) {
+
                 if(o1.getGearAttackPoints() > o2.getGearAttackPoints()){
                     return -1;
                 }else if(o2.getGearAttackPoints() < o2.getGearAttackPoints()){
                     return 1;
                 }else {
-                    return -Integer.compare(o1.getGearDefensePoints(), o2.getGearDefensePoints());
+                    return -Integer.compare(o1.getGearDefensePoints(),o2.getGearDefensePoints());
                 }
+
             }
         });
     }

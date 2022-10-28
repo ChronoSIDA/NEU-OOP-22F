@@ -83,6 +83,9 @@ public class Character implements CharacterInterface{
 //    }
     @Override
     public void setGear(Gear newGear) {
+        if (newGear == null){
+            return;
+        }
         if (newGear instanceof HeadGear) {
             defensePoint += newGear.getGearDefensePoints();
             if (headGear.size() == Character.HEAD_CAP) {
