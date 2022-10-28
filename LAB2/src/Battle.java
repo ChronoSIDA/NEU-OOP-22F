@@ -8,7 +8,7 @@ public class Battle implements BattleInterface{
     private ArrayList<Gear> gearList;
 
     public Battle(Character ch1, Character ch2, ArrayList<Gear> gearList) {
-        if (gearList.size() != 10) throw new IllegalArgumentException("the size of the gearlist should be 10");
+        if (gearList.size() != 10) throw new IllegalArgumentException("The size of the Gear List should be fixed 10.");
         this.player1 = ch1;
         this.player2 = ch2;
         this.gearList = gearList;
@@ -78,11 +78,11 @@ public class Battle implements BattleInterface{
 
         }
         if(player1.calculateDamage(player2) < player2.calculateDamage(player1)){
-            System.out.println(player1.getName() + " win!");
+            System.out.println(player1.getName() + " Wins the battle!");
         }else if (player1.calculateDamage(player2) > player2.calculateDamage(player1)){
-            System.out.println(player2.getName() + " win!");
+            System.out.println(player2.getName() + " Wins the battle!");
         }else{
-            System.out.println("there is a tie");
+            System.out.println("\nThere is a tie between two characters.");
         }
 
     }

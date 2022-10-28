@@ -20,9 +20,9 @@ public class FootWear extends AbstractGear{
 
   @Override
   public String toString() {
-    return  "Type: Footwear"  + " "+
-            "name='" + getGearName() + '\'' +
-            ", attackStrength=" + getGearAttackPoints() +
-            ", defenseStrength=" + getGearDefensePoints();
+    return  "FootWear"  + " " +
+            "Name = '" + getGearName() + '\'' +
+            ", AttackStrength = " + getGearAttackPoints() +
+            ", DefenseStrength = " + getGearDefensePoints();
   }
 }

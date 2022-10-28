@@ -13,14 +13,9 @@ public class Character implements CharacterInterface{
     private int defensePoint;
     private  String name = null;
     private  ArrayList<Gear> headGear = null;
-
     private static int HEAD_CAP = 1;
-
     private final static int HAND_CAP = 2;
-
     private final static int FOOT_CAP = 2;
-
-
     private  ArrayList<Gear> handGear = null;
     private  ArrayList<Gear> footGear = null;
 
@@ -43,44 +38,7 @@ public class Character implements CharacterInterface{
         return -(this.getDefensePoint() - c.getAttackPoint());
     }
 
-    //    @Override
-//    public void setGear(Gear newGear) {
-//        if (newGear.getType() == GEAR_TYPE.HEAD_GEAR){
-//            defensePoint += newGear.getDefenseStrength();
-//            if (headGear.size() == 1){
-//                Gear tmpGear = this.headGear.get(0);
-//                tmpGear.combine(newGear);
-//            }
-//            else {
-//                headGear.add(newGear);
-//            }
-//        } else if (newGear.getType() == GEAR_TYPE.HAND_GEAR) {
-//            attackPoint += newGear.getAttackStrength();
-//            if (handGear.size() == 2){
-//                Random random = new Random();
-//                int randIndex = random.nextInt(2);
-//                Gear tmpGear = this.handGear.get(randIndex);
-//                tmpGear.combine(newGear);
-//            }
-//            else {
-//                handGear.add(newGear);
-//            }
-//
-//
-//        }else {
-//            attackPoint += newGear.getAttackStrength();
-//            defensePoint += newGear.getDefenseStrength();
-//            if (footGear.size() == 2){
-//                Random random = new Random();
-//                int randIndex = random.nextInt(2);
-//                Gear tmpGear = this.footGear.get(randIndex);
-//                tmpGear.combine(newGear);
-//            }
-//            else {
-//                footGear.add(newGear);
-//            }
-//        }
-//    }
+
     @Override
     public void setGear(Gear newGear) {
         if (newGear == null){
@@ -152,31 +110,14 @@ public class Character implements CharacterInterface{
 
 
 
-
-//    @Override
-//    public int compareTo(Character o) {
-//        int thisRes = o.getAttackPoint() - defensePoint;
-//        int otherRes = attackPoint - o.getDefensePoint();
-//        if (thisRes < otherRes){
-//            //System.out.println(name + " win!");
-//            return 1;
-//        } else if (thisRes > otherRes) {
-//            //System.out.println(o.getName() + " win!");
-//            return -1;
-//        }else{
-//            //System.out.println("There is a tie.");
-//            return 0;
-//        }
-//    }
-
     @Override
     public String toString() {
-        return "name='" + name + '\'' +
-                "attackPoint=" + attackPoint +
-                ", defensePoint=" + defensePoint +
-                ", headGear=" + headGear +
-                ", handGear=" + handGear +
-                ", footGear=" + footGear;
+        return "Name='" + name + '\'' +
+                "AttackPoint = " + attackPoint +
+                ", DefensePoint = " + defensePoint +
+                ", HeadGear=" + headGear +
+                ", HandGear=" + handGear +
+                ", FootGear=" + footGear;
     }
 
 

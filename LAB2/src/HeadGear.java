@@ -19,10 +19,10 @@ public class HeadGear extends AbstractGear{
 
     @Override
     public String toString() {
-        return  "Type: Headgear"  + " "+
-                "name='" + getGearName() + '\'' +
-                ", attackStrength=" + getGearAttackPoints() +
-                ", defenseStrength=" + getGearDefensePoints();
+        return  "HeadGear"  + " " +
+                "Name = '" + getGearName() + '\'' +
+                ", AttackStrength = " + getGearAttackPoints() +
+                ", DefenseStrength = " + getGearDefensePoints();
     }
 
 

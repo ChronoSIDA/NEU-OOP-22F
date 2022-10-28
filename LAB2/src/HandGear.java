@@ -19,9 +19,9 @@ public class HandGear extends AbstractGear {
 
     @Override
     public String toString() {
-        return  "Type: Handgear"  + " "+
-                "name='" + getGearName() + '\'' +
-                ", attackStrength=" + getGearAttackPoints() +
-                ", defenseStrength=" + getGearDefensePoints();
+        return  "HandGear"  + " " +
+                "Name = '" + getGearName() + '\'' +
+                ", AttackStrength = " + getGearAttackPoints() +
+                ", DefenseStrength = " + getGearDefensePoints();
     }
 }

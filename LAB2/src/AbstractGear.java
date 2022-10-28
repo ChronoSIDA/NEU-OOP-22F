@@ -6,8 +6,8 @@ public abstract class AbstractGear implements Gear{
      final int attackStrength;
      final int defenseStrength;
     public AbstractGear(String Adjective, String noun, int attackValue, int defenseValue) {
-        if (Adjective.split(",").length != 1 || noun.split(",").length != 1) throw new IllegalArgumentException("There should be only one adjective and only one noun");
-        if (attackValue < 0 || defenseValue < 0 ) throw new IllegalArgumentException("attackStrength or defense Strength should not < 0");
+        if (Adjective.split(",").length != 1 || noun.split(",").length != 1) throw new IllegalArgumentException("There should be only one adjective and only one noun.");
+        if (attackValue < 0 || defenseValue < 0 ) throw new IllegalArgumentException("Attack Strength or defense Strength should not smaller than 0.");
         this.gearAdjective = Adjective;
         this.gearNoun = noun;
         this.gearName = gearAdjective + ", "+ gearNoun;
