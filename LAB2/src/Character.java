@@ -89,8 +89,9 @@ public class Character implements CharacterInterface{
         if (newGear instanceof HeadGear) {
             defensePoint += newGear.getGearDefensePoints();
             if (headGear.size() == Character.HEAD_CAP) {
-
-                headGear.set(Character.HEAD_CAP - 1, this.headGear.get(Character.HEAD_CAP - 1).combineGear(newGear));
+                Gear tmp1 = this.headGear.get(Character.HEAD_CAP - 1);
+                Gear tmp2 = tmp1.combineGear(newGear);
+                headGear.set(Character.HEAD_CAP - 1, tmp2);
             } else {
                 headGear.add(newGear);
             }

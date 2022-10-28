@@ -10,7 +10,7 @@ public class HeadGear extends AbstractGear{
 
     @Override
     boolean checkType(Gear o) {
-        if(o instanceof HandGear){
+        if(o instanceof HeadGear){
             return true;
         }
         return false;

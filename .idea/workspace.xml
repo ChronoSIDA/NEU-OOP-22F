@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="797e6f8a-4f95-4099-a99a-7092c58052f8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LAB2/src/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB2/src/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB2/src/HeadGear.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB2/src/HeadGear.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666907295920</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="OutofBounds modified">
+      <created>1666990982258</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1666990982258</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,7 +175,8 @@
     <MESSAGE value="Update" />
     <MESSAGE value="added test cases" />
     <MESSAGE value="added footwear" />
-    <option name="LAST_COMMIT_MESSAGE" value="added footwear" />
+    <MESSAGE value="OutofBounds modified" />
+    <option name="LAST_COMMIT_MESSAGE" value="OutofBounds modified" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
