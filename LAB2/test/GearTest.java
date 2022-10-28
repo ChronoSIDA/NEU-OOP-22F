@@ -1,114 +1,139 @@
-//import org.junit.Assert;
-//import org.junit.Before;
-//import org.junit.Test;
-//
-//
-//
-//import static org.junit.Assert.*;
-//
-//public class GearTest {
-//
-//    private Gear gear1;
-//    private Gear gear2;
-//    private Gear gear3;
-//    private Gear gear4;
-//    private Gear gear5;
-//
-//    @Before
-//    public void setUp() throws Exception {
-//        gear1 = new HeadGear("Abyssal", "Mask",35);
-//        gear2 = new HandGear("Infinity", "Edge",70);
-//        gear3 = new HandGear("Black", "Cleaver",40);
-//        gear4 = new FootWear("Plated", "Steelcaps",10,60);
-//        gear5 = new Footwear("Berserker", "Greaves",40,20);
-//    }
-//    @Test(expected=IllegalArgumentException.class)
-//    public void inValidAttackOrDefenseConstruct(){
-//        gear1 = new HeadGear("Abyssal", "Mask",-123);
-//        gear2 = new HandGear("Abyssal", "Mask",-100);
-//        gear4 = new Footwear("Plated", "Steelcaps",-10,-20);
-//        gear5 = new Footwear("Plated", "Steelcaps",10,-20);
-//    }
-//
-//
-//
-//    @Test(expected=IllegalArgumentException.class)
-//    public void inValidStringConstruct(){
-//        gear1 = new HeadGear("Abyssal adc", "Mask",-123);
-//        gear2 = new HandGear("Abyssal", "Mask efdas",-100);
-//    }
-//    @Test(expected=IllegalArgumentException.class)
-//    public void inValidCombineConstruct(){
-//        gear1.combine(gear2);
-//        gear2.combine(gear4);
-//        gear3.combine(gear1);
-//        gear4.combine(gear3);
-//        gear5.combine(gear1);
-//    }
-//
-//    @Test
-//    public void getType() {
-//        Assert.assertEquals(GEAR_TYPE.HEAD_GEAR, gear1.getType());
-//        Assert.assertEquals(GEAR_TYPE.HAND_GEAR, gear2.getType());
-//        Assert.assertEquals(GEAR_TYPE.HAND_GEAR, gear3.getType());
-//        Assert.assertEquals(GEAR_TYPE.FOOTWEAR, gear4.getType());
-//        Assert.assertEquals(GEAR_TYPE.FOOTWEAR, gear5.getType());
-//    }
-//
-//    @Test
-//    public void getName() {
-//        Assert.assertEquals("Abyssal, Mask", gear1.getName());
-//        Assert.assertEquals("Infinity, Edge", gear2.getName());
-//        Assert.assertEquals("Black, Cleaver", gear3.getName());
-//        Assert.assertEquals("Plated, Steelcaps", gear4.getName());
-//        Assert.assertEquals("Berserker, Greaves", gear5.getName());
-//    }
-//
-//    @Test
-//    public void getAdjective() {
-//        Assert.assertEquals("Abyssal", gear1.getAdjective());
-//        Assert.assertEquals("Infinity", gear2.getAdjective());
-//        Assert.assertEquals("Black", gear3.getAdjective());
-//        Assert.assertEquals("Plated", gear4.getAdjective());
-//        Assert.assertEquals("Berserker", gear5.getAdjective());
-//    }
-//
-//    @Test
-//    public void getNoun() {
-//        Assert.assertEquals("Mask", gear1.getNoun());
-//        Assert.assertEquals("Edge", gear2.getNoun());
-//        Assert.assertEquals("Cleaver", gear3.getNoun());
-//        Assert.assertEquals("Steelcaps", gear4.getNoun());
-//        Assert.assertEquals("Greaves", gear5.getNoun());
-//    }
-//
-//    @Test
-//    public void combine() {
-//        Gear newGear1 = gear2.combine(gear3);
-//        Assert.assertEquals("Black, Infinity Edge", newGear1.getName());
-//        Assert.assertEquals(110, newGear1.getAttackStrength());
-//        Assert.assertEquals(0, newGear1.getDefenseStrength());
-//        Gear newGear2 = gear4.combine(gear5);
-//        Assert.assertEquals("Berserker, Plated Steelcaps", newGear2.getName());
-//        Assert.assertEquals(50, newGear2.getAttackStrength());
-//        Assert.assertEquals(80, newGear2.getDefenseStrength());
-//    }
-//
-//    @Test
-//    public void getAttackStrength() {
-//        Assert.assertEquals(0, gear1.getAttackStrength());
-//        Assert.assertEquals(70, gear2.getAttackStrength());
-//        Assert.assertEquals(40, gear3.getAttackStrength());
-//        Assert.assertEquals(10, gear4.getAttackStrength());
-//        Assert.assertEquals(40, gear5.getAttackStrength());
-//    }
-//
-//    @Test
-//    public void getDefenseStrength() {
-//        Assert.assertEquals(35, gear1.getDefenseStrength());
-//        Assert.assertEquals(0, gear2.getDefenseStrength());
-//        Assert.assertEquals(0, gear3.getDefenseStrength());
-//        Assert.assertEquals(60, gear4.getDefenseStrength());
-//        Assert.assertEquals(20, gear5.getDefenseStrength());
-//    }
-//}
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
+
+
+import static org.junit.Assert.*;
+
+public class GearTest {
+
+    private Gear headGear1;
+    private Gear handGear1;
+    private Gear handGear2;
+    private Gear footWear1;
+    private Gear footWear2;
+
+    @Before
+    public void setUp() throws Exception {
+        headGear1 = new HeadGear("Burning Righteousness", "Helm", 34);
+        handGear1 = new HandGear("Thunderfury","Sword", 72);
+        handGear2 = new HandGear("Warglaive of Azzinoth", "Sword", 42);
+        footWear1 = new FootWear("The Sentinel's Eternal Refuge Demon Hunter", "Boot", 8, 10);
+        footWear2 = new FootWear("The Neverending Path", "Boot", 9, 9);
+    }
+    @Test
+    public void invalidAttackOrDefenseGearTest(){
+        System.out.println("Given gear with -34 defense: ");
+        try {
+            headGear1 = new HeadGear("Burning Righteousness", "Helm", -34);
+        } catch (IllegalArgumentException e) {
+            e.getStackTrace();
+        }
+        System.out.println("Given gear with -9 attack: ");
+        try {
+            handGear1 = new HandGear("Thunderfury","Sword", -72);
+        } catch (IllegalArgumentException e) {
+            e.getStackTrace();
+        }
+
+        System.out.println("Given gear with -42 attack: ");
+        try {
+            handGear2 = new HandGear("Warglaive of Azzinoth", "Sword", -42);
+        } catch (IllegalArgumentException e) {
+            e.getStackTrace();
+        }
+
+        System.out.println("Given gear with -8 attack: ");
+        try {
+            footWear1 = new FootWear("The Sentinel's Eternal Refuge Demon Hunter", "Boot", -8, 10);
+        } catch (IllegalArgumentException e) {
+            e.getStackTrace();
+        }
+
+        System.out.println("Given gear with -9 attack: ");
+        try {
+            footWear2 = new FootWear("The Neverending Path", "Boot", -9, 9);
+        } catch (IllegalArgumentException e) {
+            e.getStackTrace();
+        }
+        System.out.println("Passed all invalid attack or defense values for gear types");
+    }
+
+
+
+    @Test
+    public void inValidStringConstruct(){
+        System.out.println("Given gear with name of 'Sword, Boot, Hand': ");
+        try {
+            handGear1 = new HandGear("Thunderfury","Sword, Boot, Hand", -72);
+        } catch (IllegalArgumentException e) {
+            e.getStackTrace();
+        }
+        System.out.println("Passed invalid gear name (noun).");
+    }
+    @Test
+    public void inValidCombineConstruct(){
+        System.out.println("Tried to combine head gear with a hand gear:");
+        try {
+            headGear1.combineGear(handGear1);
+        } catch (IllegalArgumentException e) {
+            e.getStackTrace();
+        }
+        System.out.println("Passed invalid gear combine type.");
+    }
+
+    @Test
+    public void getName() {
+        Assert.assertEquals("Thunderfury, Sword", handGear1.getGearName());
+        System.out.println("Passed get gear noun.");
+    }
+
+    @Test
+    public void getAdjective() {
+        Assert.assertEquals("Burning Righteousness", headGear1.getGearAdjective());
+        System.out.println("Passed get gear adjective.");
+    }
+
+    @Test
+    public void getNoun() {
+        Assert.assertEquals("Sword", handGear1.getGearNoun());
+        System.out.println("Passed get gear Noun.");
+    }
+
+    @Test
+    public void getCombineValues() {
+        Gear newGear1 = handGear1.combineGear(handGear2);
+        Assert.assertEquals("Thunderfury Warglaive of Azzinoth, Sword", newGear1.getGearName());
+        Assert.assertEquals(114, newGear1.getGearAttackPoints());
+        Assert.assertEquals(0, newGear1.getGearDefensePoints());
+        Gear newGear2 = footWear1.combineGear(footWear2);
+        Assert.assertEquals("The Sentinel's Eternal Refuge Demon Hunter The Neverending Path, Boot", newGear2.getGearName());
+        Assert.assertEquals(17, newGear2.getGearAttackPoints());
+        Assert.assertEquals(19, newGear2.getGearDefensePoints());
+
+        System.out.println("Passed all combined gear values.");
+    }
+
+    @Test
+    public void getAttackStrength() {
+        Assert.assertEquals(0, headGear1.getGearAttackPoints());
+        Assert.assertEquals(72, handGear1.getGearAttackPoints());
+        Assert.assertEquals(42, handGear2.getGearAttackPoints());
+        Assert.assertEquals(8, footWear1.getGearAttackPoints());
+        Assert.assertEquals(9, footWear2.getGearAttackPoints());
+
+        System.out.println("Passed five gears attack points.");
+    }
+
+    @Test
+    public void getDefenseStrength() {
+        Assert.assertEquals(34, headGear1.getGearDefensePoints());
+        Assert.assertEquals(0, handGear1.getGearDefensePoints());
+        Assert.assertEquals(0, handGear2.getGearDefensePoints());
+        Assert.assertEquals(10, footWear1.getGearDefensePoints());
+        Assert.assertEquals(9, footWear2.getGearDefensePoints());
+
+        System.out.println("Passed five gears defense points.");
+    }
+}

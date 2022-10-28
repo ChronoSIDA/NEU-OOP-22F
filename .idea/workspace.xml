@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="797e6f8a-4f95-4099-a99a-7092c58052f8" name="Changes" comment="">
+    <list default="true" id="797e6f8a-4f95-4099-a99a-7092c58052f8" name="Changes" comment="added test cases">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LAB2/src/AbstractGear.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB2/src/AbstractGear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LAB2/src/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB2/src/Battle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LAB2/src/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB2/src/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LAB2/src/FootWear.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB2/src/FootWear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LAB2/src/HandGear.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB2/src/HandGear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LAB2/src/HeadGear.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB2/src/HeadGear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LAB2/test/BattleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB2/test/BattleTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LAB2/test/CharacterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB2/test/CharacterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LAB2/test/GearTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/LAB2/test/GearTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,11 +36,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "node.js.selected.package.tslint": "(autodetect)"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\sidaz\Desktop\5010\NEUOOP22F\LAB2\test" />
@@ -72,7 +65,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BattleTest">
+  <component name="RunManager" selected="JUnit.GearTest">
     <configuration name="BattleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LAB2" />
       <option name="PACKAGE_NAME" value="" />
@@ -102,21 +95,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="5010Lab" />
+    <configuration name="GearTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LAB2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GearTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="5010Lab" />
-      <option name="filePath" />
+    <configuration name="GearTest.getDefenseStrength" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LAB2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GearTest" />
+      <option name="METHOD_NAME" value="getDefenseStrength" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GearTest" />
+        <item itemvalue="JUnit.GearTest.getDefenseStrength" />
         <item itemvalue="JUnit.BattleTest" />
         <item itemvalue="JUnit.BattleTest.inValidGearListSizeConstruct" />
         <item itemvalue="JUnit.BattleTest.start" />
@@ -166,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666990982258</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added test cases">
+      <created>1666994317614</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1666994317614</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,9 +193,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update" />
-    <MESSAGE value="added test cases" />
     <MESSAGE value="added footwear" />
     <MESSAGE value="OutofBounds modified" />
-    <option name="LAST_COMMIT_MESSAGE" value="OutofBounds modified" />
+    <MESSAGE value="added test cases" />
+    <option name="LAST_COMMIT_MESSAGE" value="added test cases" />
   </component>
 </project>
