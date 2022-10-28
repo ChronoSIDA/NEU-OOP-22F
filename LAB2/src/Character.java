@@ -96,7 +96,7 @@ public class Character implements CharacterInterface{
             }
         } else if (newGear instanceof HandGear) {
             attackPoint += newGear.getGearAttackPoints();
-            if (this.handGear.size() == Character.HEAD_CAP) {
+            if (this.handGear.size() == Character.HAND_CAP) {
 
                 handGear.set(Character.HAND_CAP - 1, this.handGear.get(Character.HAND_CAP - 1).combineGear(newGear));
             } else {
