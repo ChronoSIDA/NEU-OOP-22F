@@ -18,18 +18,19 @@ public class Battle implements BattleInterface{
 
                 if(o1.getGearAttackPoints() > o2.getGearAttackPoints()){
                     return -1;
-                }else if(o2.getGearAttackPoints() < o2.getGearAttackPoints()){
+                }else if(o1.getGearAttackPoints() < o2.getGearAttackPoints()){
                     return 1;
-                }else {
+                }else{
                     return -Integer.compare(o1.getGearDefensePoints(),o2.getGearDefensePoints());
                 }
+
 
             }
         });
     }
 
-
-    private void assignGear(ArrayList<Gear> gearList, Character player){
+    @Override
+    public void assignGear(ArrayList<Gear> gearList, Character player){
 
         for (int i = 0; i < gearList.size(); i++) {
             Gear tmp = gearList.get(i);
@@ -60,6 +61,11 @@ public class Battle implements BattleInterface{
         player.setGear(gear);
         gearList.remove(0);
 
+    }
+
+    @Override
+    public ArrayList<Gear> getGearList() {
+        return this.gearList;
     }
 
     @Override

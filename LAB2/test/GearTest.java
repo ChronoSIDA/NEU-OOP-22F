@@ -19,7 +19,7 @@
 //        gear1 = new HeadGear("Abyssal", "Mask",35);
 //        gear2 = new HandGear("Infinity", "Edge",70);
 //        gear3 = new HandGear("Black", "Cleaver",40);
-//        gear4 = new Footwear("Plated", "Steelcaps",10,60);
+//        gear4 = new FootWear("Plated", "Steelcaps",10,60);
 //        gear5 = new Footwear("Berserker", "Greaves",40,20);
 //    }
 //    @Test(expected=IllegalArgumentException.class)

@@ -1,4 +1,4 @@
-public interface Gear extends Comparable<Gear> {
+public interface Gear {
     //GearType getGearType();
     String getGearName();
     String getGearAdjective();

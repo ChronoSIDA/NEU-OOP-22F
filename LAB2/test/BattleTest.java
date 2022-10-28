@@ -133,5 +133,15 @@ public class BattleTest {
             Assert.assertEquals(180, chara1.getDefensePoint());
 
     }
+    @Test
+    public void testGetGearList(){
+        //TO check whether the gearlist is in order
+        System.out.println("Battle1");
+        for(Gear gear: battle1.getGearList()){
+            System.out.println(gear);
+        }
+
+
+    }
 }
 

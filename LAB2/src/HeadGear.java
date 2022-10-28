@@ -26,4 +26,5 @@ public class HeadGear extends AbstractGear{
     }
 
 
+
 }

@@ -69,14 +69,5 @@ public abstract class AbstractGear implements Gear{
         return this.defenseStrength;
     }
 
-    @Override
-    public int compareTo(Gear o) {
-        if (this.getGearAttackPoints() < o.getGearDefensePoints()){
-            return -1;
-        } else if(this.getGearAttackPoints() > o.getGearDefensePoints()){
-            return 1;
-        } else{
-            return Integer.compare(this.getGearDefensePoints(), o.getGearDefensePoints());
-        }
-    }
+
 }
